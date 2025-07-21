@@ -1,4 +1,4 @@
-# Advanced Git Training
+# Intermediate Git Training
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
 
@@ -22,10 +22,21 @@ Look for the tag [![good_first_issue](https://img.shields.io/badge/-good%20first
 
 ## Maintainer(s)
 
-Current maintainers of this lesson are 
+Current maintainers of this lesson are:
 
-* Ivelina Momcheva (@ivastar)
-* James Davies (@jdavies-st)
+* Colin Sauze
+* Esther Turner
+* Tobias Ferreira
+
+## Upstream lessons
+
+This lesson is based on a combination of the following lessons:
+
+* "Advanced Git" by  Ivelina Momcheva and James Davies - https://carpentries-incubator.github.io/advanced-git/
+* "Git Demystified" by the SA2C - https://sa2c.swansea.ac.uk/git-demystified/
+* "Intermediate Research Software Development" by the Software Sustainability Institute - https://github.com/carpentries-incubator/python-intermediate-development/blob/main/episodes/14-collaboration-using-git.md
+* "Advanced Git" by Ryan Wick, Clara Llebot and Steve Van Tuyl - https://osulp.github.io/git-advanced/
+* "Better Research Software" by the Software Sustainability Insitute - https://carpentries-incubator.github.io/fair-research-software/10-open-collaboration.html
 
 
 ## Authors

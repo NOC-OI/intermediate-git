@@ -1,0 +1,42 @@
+from advanced git (this repo):
+
+	forking 
+	branches
+	branches with remotes
+	branching models
+
+	merging
+	squashing but shown via github
+	restoring history (git checkout, reset, restore, revert)
+	tags
+
+	
+	large files
+	renaming files
+
+
+
+from beyond the basics (https://sa2c.swansea.ac.uk/git-demystified)
+
+	include some reset/checkout stuff from changing history
+	multiple remotes
+
+	advanced logging - by date, author etc
+	branch graphs?
+
+	identifying breaking commits
+
+
+from python-intermediate-software (https://github.com/carpentries-incubator/python-intermediate-development/blob/main/episodes/14-collaboration-using-git.md)
+
+	git refresher
+
+	nice branch diagram
+
+from better research software (https://carpentries-incubator.github.io/better-research-software/10-open-collaboration.html)
+	
+	zenodo
+	citation file
+
+	issue tracking
+	

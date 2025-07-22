@@ -72,5 +72,58 @@ In summary, there are many different ways to collaborate on a project. Look at t
 <!--- ![Branching 1](../fig/15-branching-1.png) --->
 <!--- ![branching 2](../fig/16-branching-2.png) --->
 
+### Feature Branch Software Development Workflow
+
+While it is technically OK to commit your changes directly to `main` branch,
+and you may often find yourself doing so for some minor changes,
+the best practice is to use a new branch for each separate and self-contained unit/piece of work
+you want to add to the project.
+This unit of work is also often called a *feature*
+and the branch where you develop it is called a *feature branch*.
+Each feature branch should have its own meaningful name -
+indicating its purpose (e.g. "issue23-fix").
+If we keep making changes and pushing them directly to `main` branch on GitHub,
+then anyone who downloads our software from there will get all of our work in progress -
+whether or not it is ready to use!
+So, working on a separate branch for each feature you are adding is good for several reasons:
+
+- it enables the main branch to remain stable
+  while you and the team explore and test the new code on a feature branch,
+- it enables you to keep the untested and not-yet-functional feature branch code
+  under version control and backed up,
+- you and other team members may work on several features
+  at the same time independently from one another, and
+- if you decide that the feature is not working or is no longer needed -
+  you can easily and safely discard that branch without affecting the rest of the code.
+
+Branches are commonly used as part of a feature-branch workflow, shown in the diagram below.
+
+![](fig/git-feature-branch.svg){alt='Git feature branch workflow diagram' .image-with-shadow width="800px"}
+
+<p style="text-align: center;">Git feature branches<br>
+Adapted from <a href="https://sillevl.gitbooks.io/git/content/collaboration/workflows/gitflow/" target="_blank">Git Tutorial by sillevl</a> (Creative Commons Attribution 4.0 International License)</p>
+
+In the software development workflow,
+we typically have a main branch which is the version of the code that is
+tested, stable and reliable.
+Then, we normally have a development branch
+(called `develop` or `dev` by convention)
+that we use for work-in-progress code.
+As we work on adding new features to the code,
+we create new feature branches that first get merged into `develop`
+after a thorough testing process.
+After even more testing - `develop` branch will get merged into `main`.
+The points when feature branches are merged to `develop`,
+and `develop` to `main`
+depend entirely on the practice/strategy established in the team.
+For example, for smaller projects
+(e.g. if you are working alone on a project or in a very small team),
+feature branches sometimes get directly merged into `main` upon testing,
+skipping the `develop` branch step.
+In other projects,
+the merge into `main` happens only at the point of making a new software release.
+Whichever is the case for you, a good rule of thumb is -
+nothing that is broken should be in `main`.
+
 
 {% include links.md %}

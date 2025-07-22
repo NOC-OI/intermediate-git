@@ -111,5 +111,87 @@ https://www.atlassian.com/git/tutorials/syncing/git-fetch
 
 [comment]: <> (![Review 2](../fig/03-recap.png))
 
+## Git Refresher
+
+Git is a version control system for tracking changes in computer files
+and coordinating work on those files among multiple people.
+It is primarily used for source code management in software development
+but it can be used to track changes in files in general -
+it is particularly effective for tracking text-based files
+(e.g. source code files, CSV, Markdown, HTML, CSS, Tex, etc. files).
+
+Git has several important characteristics:
+
+- support for non-linear development
+  allowing you and your colleagues to work on different parts of a project concurrently,
+- support for distributed development
+  allowing for multiple people to be working on the same project
+  (even the same file) at the same time,
+- every change recorded by Git remains part of the project history
+  and can be retrieved at a later date,
+  so even if you make a mistake you can revert to a point before it.
+
+The diagram below shows a typical software development lifecycle with Git
+(in our case starting from making changes in a local branch that "tracks" a remote branch) and the commonly used commands to interact
+with different parts of the Git infrastructure, including:
+
+- **working tree** -
+  a local directory (including any subdirectories) where your project files live
+  and where you are currently working.
+  It is also known as the "untracked" area of Git or "working directory".
+  Any changes to files will be marked by Git in the working tree.
+  If you make changes to the working tree and do not explicitly tell Git to save them -
+  you will likely lose those changes.
+  Using `git add filename` command,
+  you tell Git to start tracking changes to file `filename` within your working tree.
+- **staging area (index)** -
+  once you tell Git to start tracking changes to files
+  (with `git add filename` command),
+  Git saves those changes in the staging area on your local machine.
+  Each subsequent change to the same file needs to be followed by another `git add filename` command
+  to tell Git to update it in the staging area.
+  To see what is in your working tree and staging area at any moment
+  (i.e. what changes is Git tracking),
+  run the command `git status`.
+- **local repository** -
+  stored within the `.git` working tree of your project locally,
+  this is where Git wraps together all your changes from the staging area
+  and puts them using the `git commit` command.
+  Each commit is a new, permanent snapshot (checkpoint, record) of your project in time,
+  which you can share or revert to.
+- **remote repository** -
+  this is a version of your project that is hosted somewhere on the Internet
+  (e.g., on GitHub, GitLab or somewhere else).
+  While your project is nicely version-controlled in your local repository,
+  and you have snapshots of its versions from the past,
+  if your machine crashes - you still may lose all your work. Furthermore, you cannot
+  share or collaborate on this local work with others easily.
+  Working with a remote repository involves pushing your local changes remotely
+  (using `git push`) and pulling other people's changes from a remote repository to
+  your local copy (using `git fetch` or `git pull`) to keep the two in sync
+  in order to collaborate (with a bonus that your work also gets backed up to another machine).
+  Note that a common best practice when collaborating with others on a shared repository
+  is to always do a `git pull` before a `git push`, to ensure you have any latest changes before you push your own.
+
+<!--
+Created with https://mermaid.live/edit#pako:eNqVUsFOwzAM_ZXIJxBldK3aZjlMQsANLhsSEuolNF5brU1KmgjKtH8nbRlsTEPCJ9t5L-9Z9gYyJRAYtPhqUWZ4W_Jc8zqVxMWT0utS5uRRI17O5xdLw_O-vtbIGclLQ7gQI3T_qYfeq4xXZIGNakujdDfCM1XXpRkZvxE9a4G1MnhEa2xbjKQjwGmtFZqsOC21PxsbvBWYrZU1_6DUqHP8w9gB4WuSqiJnbaG0yazzqPSPV1dVlXpDQV46su_oatA5Bw9cUvNSuH1tetkUTIE1psBcKnDFbWVSSOXWQbk1atnJDJjRFj2wjeBmt15gK161rouiN_sw3sBwCh5oZfPiG9Fw-axUffjN3UDb9XLdWxpzjVKgvlFWGmDxdOAD28A7sIhGkygJ_Wjm08APp4EHHbAknszCJAoCSumUhvHWg49Bz5_QJPJdRGEYz5IkpttPWWLlPg
+
+sequenceDiagram
+    Working Tree->>+Staging Area: git add
+    Staging Area->>+Local Repository: git commit
+    Local Repository->>+Remote Repository: git push
+    Remote Repository->>+Local Repository: git fetch
+    Local Repository->>+Working Tree:git checkout
+    Local Repository->>+Working Tree:git merge
+    Remote Repository->>+Working Tree: git pull (shortcut for git fetch followed by git checkout/merge)
+-->
+
+<!--
+SVG of the diagram can be downloaded from:
+https://mermaid.ink/svg/pako:eNqFksFuwyAMhl8FcemmdS_AodKm7rZe2sOkKRcXnAQNcEaMpqjquw-SZZtUReEE9vfbP5iL1GRQKtnjZ8KgcW-hieCrIPJ6o_hhQyP2NqJmisPjbvdwYmhK8CkiKNFYFmDMxP9PFfSVNDhxxI56W-TiOULQ7aTS5L3lSbgAlhpH9MS4VKRLfTuVWOJWfdTIul21cfMUqmg9xgbX-9-Kf8w7J-76liLrlI1Q_DOUT87RFxpxHsRvq5EBseEIeqx4Hnts7uVWZsCDNXmWl-Koktyix0qqvDVYQ3JcySpcMwqJ6TQELRXHhFuZOgM8j16qGlyfo2jKPQ7T_xi_yUy-jJlZ3UF4J5p112_HVM9r
+-->
+
+![Software development lifecycle with Git](fig/git-lifecycle.svg){alt='Development lifecycle with Git, containing Git commands add, commit, push, fetch, restore, merge and pull' .image-with-shadow width="600px"}
+
 
 {% include links.md %}

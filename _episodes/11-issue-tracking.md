@@ -20,36 +20,6 @@ Adding a [license](../learners/licensing.md) and other metadata to our code (cov
 sharing the code publicly.
 There are several other important steps to consider which we will cover here.
 
-
-## Sharing code to encourage collaboration
-
-### Making the code public
-
-By default repositories created on GitHub are private and only their creator can see them. 
-Since we added an open source license to our repository we probably want to make sure people can actually 
-access it. 
-
-To make your repository public, if it is not already, go to your repository on GitHub and click on 
-the `Settings` link near the top right corner. 
-Then scroll down to the bottom of the page and the "Danger Zone" settings. Click on "Change Visibility" and you 
-should see a message saying "Change to public".
-If it says "Change to private" then the repository is already public. 
-You will then be asked to confirm that you indeed want to make the repository public and agree 
-to the warning that the code will now be publicly visible. 
-As a security measure, you will then have to put in your GitHub password.
-
-### Transferring to an organisation
-
-Currently our repository is under the GitHub "namespace" of our individual user. 
-This is OK for individual projects where we are the sole or at least the main code author,
-but for bigger and more complex projects it is common to use a GitHub organisation named after our project. 
-If we are a member of an organisation and have the appropriate
-permissions then we can transfer a repository from our personal namespace to the organisation's. 
-This can be done with another option in the "Danger Zone" settings, the
-"Transfer ownership" button. 
-Pressing this will then prompt us as to which organisation we want to transfer the repository to. 
-
-
 ## Working with collaborators
 
 The strength of online collaboration platforms such as GitHub does not just lie in the ability to share code. 

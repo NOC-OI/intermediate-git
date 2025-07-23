@@ -51,21 +51,21 @@ That said, there are a number of established (and less so) branching models that
 
 - **Centralized workflow**: enables all team members to make changes directly to the main branch. Every change is logged into the history. In this workflow, the contributors do not use other branches. Instead they all make changes on the main branch directly and commit to it. This woks for individual developers or small thema which communicate very well, but can be tricky for larger teams: the code is in constant state of flux and developers keep changes local until they are ready to release.
 
-- **Trunk-based development** (cactus flow?): is somewhat similar to the centralized workflow. The development happens on a single branch called `trunk`. When changes need to be merged, each developer pulls and rebases from the trunk branch and resolves conflicts locally. This can work if small merges are made frequently and is more successful if there is CI/CD.
+- **Trunk-based development**: is somewhat similar to the centralized workflow. The development happens on a single branch called `trunk`. When changes need to be merged, each developer pulls and rebases from the trunk branch and resolves conflicts locally. This can work if small merges are made frequently and is more successful if there is CI/CD.
   
 - **Feature branch workflow**: every small change or "feature" gets its own branch where the developers make changes. Once the feature is done, they submit a merge/pull request and merge it into the main branch. Features branches should be relatively short-lived. The benefit of this model is that the main branch is not poluted by unfinished features. Good for teams.
   
 - **Gitflow**: is a model where the main development happens in a develop branch with feature branches. When the develop branch is ready for a release (or to go into production), a team member creates a release branch which is tested and eventually merged onto the dev and eventually main branch.
   
-- **GitHub flow** (https://docs.github.com/en/get-started/quickstart/github-flow): similar to the branching workflow.
+- **GitHub flow**: similar to the branching workflow. ([Further info](https://docs.github.com/en/get-started/quickstart/github-flow))
   
-- **GitLab flow**: is a simplified version of Gitflow (https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/)
+- **GitLab flow**: is a simplified version of Gitflow. ([Further info](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/))
 
-- **Oneflow**: is similar to Gitflow but relies on the maintanance of one long-lived branch. It is meant to be simpler, without a develop branch but feature branches still exist (https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow).
+- **Oneflow**: is similar to Gitflow but relies on the maintanance of one long-lived branch. It is meant to be simpler, without a develop branch but feature branches still exist.  ([Further info](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow))
   
 - **Forking workflow** (e.g. astropy): is a model where each contributor creates a `fork` or a complete copy of the repository. Every contribitor effectively has two repositories: his own and the main (upstream) one. Changes are made as pull requests against the main repository. This model is propular with open source projects because the vast majority of contributors do not need to have priviledges in the main repository. 
 
-A longer description of some of these can be found here: https://about.gitlab.com/topics/version-control/what-is-git-workflow/#feature-branching-git-workflow
+A longer description of some of these can be found [here](https://about.gitlab.com/topics/version-control/what-is-git-workflow/#feature-branching-git-workflow).
 
 In summary, there are many different ways to collaborate on a project. Look at the pros and cons and select one that fits the needs and organization of your team and project. In the following several sections we look at some of these models in more detail.
 
@@ -98,7 +98,7 @@ So, working on a separate branch for each feature you are adding is good for sev
 
 Branches are commonly used as part of a feature-branch workflow, shown in the diagram below.
 
-![](fig/git-feature-branch.svg){alt='Git feature branch workflow diagram' .image-with-shadow width="800px"}
+![](../fig/git-feature-branch.svg){alt='Git feature branch workflow diagram' .image-with-shadow width="800px"}
 
 <p style="text-align: center;">Git feature branches<br>
 Adapted from <a href="https://sillevl.gitbooks.io/git/content/collaboration/workflows/gitflow/" target="_blank">Git Tutorial by sillevl</a> (Creative Commons Attribution 4.0 International License)</p>

@@ -42,8 +42,8 @@ git merge --no-ff <branch> -m "Message"
 
 The `--no-ff` flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward. This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature.
 
-## Exercise: Creating a non-fast-forward merge.
-
+>## Exercise: Creating a non-fast-forward merge.
+>
 > Create a new Git repository that has the following tree.
 >
 > ~~~
@@ -86,8 +86,8 @@ If using the fast-forward merge, it is impossible to see from the `git` history 
 
 For a good illustration of fast-forward merge (and other concepts), see this [thread](https://stackoverflow.com/questions/9069061/what-effect-does-the-no-ff-flag-have-for-git-merge).
 
-## Exercise: Creating a fast-forwad merge.
-
+>## Exercise: Creating a fast-forwad merge.
+>
 > Consider the following Git tree
 >
 > ~~~

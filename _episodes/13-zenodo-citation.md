@@ -59,7 +59,7 @@ software.
 Let us now look into how we can archive a GitHub repository to Zenodo. 
 Note that, instead of using the real Zenodo website, we will practice with [Zenodo Sandbox](https://sandbox.zenodo.org/).
 
->### Zenodo Sandbox
+>## Zenodo Sandbox
 > [Zenodo Sandbox](https://sandbox.zenodo.org/) is a testing environment for Zenodo, a repository for research outputs, 
 > allowing users to safely experiment with its features without affecting the live system.
 > It is a clone of Zenodo, created for testing purposes, that works exactly the same way as Zenodo you can use it 
@@ -112,7 +112,7 @@ Here is the badge for this repository and the corresponding Markdown:
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11869450.svg)](https://doi.org/10.5281/zenodo.11869450)
 ```
 
->### Archive your repository to Zenodo (Sandbox)
+>## Archive your repository to Zenodo (Sandbox)
 > Note: for this exercise, as demonstrated earlier, you should use the [Sandbox Zenodo](https://sandbox.zenodo.org/) (a version of 
 > Zenodo for testing and playing with before minting a real DOI).
 > For real software releases, you should use Zenodo.
@@ -177,7 +177,7 @@ date-released: 2024-06-01
 ```
 
 
->### Add a DOI to your citation file
+>## Add a DOI to your citation file
 > Add the DOI you were allocated in the previous exercise to your `CITATION.cff` file and then commit and 
 > push the updated version to your GitHub repository. 
 > If you used the `commit` field in your `CITATION.cff` file before to point to a given version of the code - you can 
@@ -185,7 +185,7 @@ date-released: 2024-06-01
 {: .challenge}
 
 
->### Going further with publishing code
+>## Going further with publishing code
 > We now have our code published online, licensed as open source, archived with Zenodo, accessible via a DOI and with a citation file to encourage people to cite it. 
 > What else might we want to do in order to improve how findable, accessible or reusable it is?
 > One further step we could take is to publish the code with a peer reviewed journal. Some traditional journals will accept software submissions, although these are usually as a supplementary material for a paper. There also journals which specialise in research software such as the [Journal of Open Research Software](https://openresearchsoftware.metajnl.com/),

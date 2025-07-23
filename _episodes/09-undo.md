@@ -26,8 +26,8 @@ keypoints:
 
 ---
 
-## Exercise: Creating a branch.
-
+>## Exercise: Creating a branch.
+>
 > - Create a new branch called `hotfix`. Create a new file and make 3-4 commits in that file or create 3-4 new files. Check the log to see the SHA of the last commit.
 > 
 > > ## Solution
@@ -165,8 +165,8 @@ git checkout alt-history
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting
 Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 
-## Exercise: Undoing Changes
-
+>## Exercise: Undoing Changes
+>
 > - Create a new branch called `hotfix`. Create a new file and make 3-4 commits in that file. Check the log to see the SHA of the last commit.
 > 
 > > ## Solution
@@ -177,7 +177,7 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
-
+>
 > - Revert the last commit that we just inserted. Check the history.
 > 
 > > ## Solution
@@ -188,7 +188,7 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
-
+>
 > - Completely throw away the last two commits [DANGER ZONE!!!]. Check the status and the log.
 > 
 > > ## Solution
@@ -200,7 +200,7 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
-
+>
 > - Undo another commit but leave it in the staging area. Check the status and log.
 > 
 > > ## Solution
@@ -212,7 +212,7 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
-
+>
 > - Wrap it up: add and commit the changes.
 > 
 > > ## Solution
@@ -223,10 +223,6 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
-
-<!--- ![GitFlow 1](../fig/43-undo.png) --->
-
-
 
 
 In the last lesson we learnt about commits and how they chain together to form a sequence. In this lesson we'll start to learn how to manipulate that sequence of commits, in the context of the three trees. We'll explore this with a simple repository.

@@ -79,8 +79,6 @@ git tag -d <tag>
 ~~~
 {: .language-bash}
 
-Since tags are frequently used to do releases, it is useful to be aware that codebases and languages have standards on how release versions should be labled. If you are working with an existing code base, follow the standard set by the dev team. If you are developing a library by yourself, follow the standards for the language. For example, the [Python Packaging Authority](https://packaging.python.org/en/latest/specifications/version-specifiers/#version-specifiers) (and previously[PEP440](https://peps.python.org/pep-0440/)) specifies the scheme for identifying versions for `python` libraries. 
-
-<!--- ![Merging 1](../fig/14-tags.png)---> 
+Since tags are frequently used to do releases, it is useful to be aware that codebases and languages have standards on how release versions should be labled. If you are working with an existing code base, follow the standard set by the dev team. If you are developing a library by yourself, follow the standards for the language. For example, the [Python Packaging Authority](https://packaging.python.org/en/latest/specifications/version-specifiers/#version-specifiers) (and previously [PEP440](https://peps.python.org/pep-0440/)) specifies the scheme for identifying versions for `python` libraries. 
 
 {% include links.md %}

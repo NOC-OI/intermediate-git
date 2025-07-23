@@ -140,8 +140,7 @@ Now examine the state of your repository with `git branch`, `git remote -v`, `gi
 
 
 ## Multiple remotes
-For this section we'll need some code. We'll use a popular collection of git utility scripts called "gitflow". We've got a copy prepared for the lesson at https://github.com/sa2c/example-gitflow. The first thing we want to do is create a copy of this repository for us to work on. This create a fork by clicking the fork button on the top left of the page
-![github-fork-gitflow](../fig/github-fork-gitflow.png)
+For this section we'll need some code. We'll use a popular collection of git utility scripts called "gitflow". We've got a copy prepared for the lesson at https://github.com/sa2c/example-gitflow. The first thing we want to do is create a copy of this repository for us to work on. This create a fork by clicking the fork button on the top left of the page.
 You'll be redirected after a short wait to your own personal
 repository which is a copy of one at `sa2c/example-gitflow`. We will need to
 clone the code from your fork.

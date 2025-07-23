@@ -10,6 +10,8 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
+We want this to be a reminder of how to work with forks, rather than the forking workflow. (Could cover that at the end as a transistion into branching and branch based workflows.)
+
 Preparation: Make sure that the main is clean, everything is committed.
 
 The forking workflow is popular among open source software projects and often used in conjunction with a branching model. 

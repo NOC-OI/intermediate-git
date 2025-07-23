@@ -16,7 +16,7 @@ It fosters knowledge exchange, accelerates scientific progress, and enhances the
 Additionally, open sharing encourages community contributions and can lead to better-maintained, 
 more reliable software.
 
-Adding a [license](../learners/licensing.md) and other metadata to our code (covered in the previous episode) are the first steps towards 
+Adding a license and other metadata to our code (covered in the previous episode) are the first steps towards 
 sharing the code publicly.
 There are several other important steps to consider which we will cover here.
 
@@ -51,7 +51,7 @@ Pressing this will then prompt us as to which organisation we want to transfer t
 
 ### Archiving code to Zenodo and obtaining a DOI
 
-[Zenodo][zenodo] is a data archive run by CERN. 
+[Zenodo](https://zenodo.org/) is a data archive run by CERN. 
 Anybody can upload datasets up to 50GB to it and receive a Digital Object Identifier (DOI). 
 Zenodo's definition of a dataset is quite broad and can include code - which gives us a way to obtain a DOI for our 
 software. 
@@ -61,15 +61,15 @@ Note that, instead of using the real Zenodo website, we will practice with [Zeno
 
 ::: callout
 
-### Zenodo Sandbox
-[Zenodo Sandbox](https://sandbox.zenodo.org/) is a testing environment for Zenodo, a repository for research outputs, 
-allowing users to safely experiment with its features without affecting the live system.
-It is a clone of Zenodo, created for testing purposes, that works exactly the same way as Zenodo you can use it 
-for learning, training, experimenting, and preparing uploads without impacting the primary Zenodo repository until
-you are ready to publish and release your code (or other research outputs) officially.
-It will also not create real DOIs for a number of test repositories we use for this course and saturate the DOI space
-(remember that a DOI, once created, is meant to exist forever).
-:::
+> ### Zenodo Sandbox
+> [Zenodo Sandbox](https://sandbox.zenodo.org/) is a testing environment for Zenodo, a repository for research outputs, 
+> allowing users to safely experiment with its features without affecting the live system.
+> It is a clone of Zenodo, created for testing purposes, that works exactly the same way as Zenodo you can use it 
+> for learning, training, experimenting, and preparing uploads without impacting the primary Zenodo repository until
+> you are ready to publish and release your code (or other research outputs) officially.
+> It will also not create real DOIs for a number of test repositories we use for this course and saturate the DOI space
+> (remember that a DOI, once created, is meant to exist forever).
+{: .callout}
 
 We can archive our GitHub repository to Zenodo (Sandbox) by doing the following:
 

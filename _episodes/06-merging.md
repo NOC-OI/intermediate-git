@@ -30,7 +30,7 @@ git checkout -b develop upstream/develop
 ~~~
 {: .language-bash}
 
-## Non-fast-forwad Merge
+## Non-fast-forward Merge
 
 Merges branch by creating a merge commit. Prompts for merge commit message. Ideal for merging two branches.
 
@@ -42,7 +42,7 @@ git merge --no-ff <branch> -m "Message"
 
 The `--no-ff` flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward. This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature.
 
-## Exercise: Creating a non-fast-forwad merge.
+## Exercise: Creating a non-fast-forward merge.
 
 > Create a new Git repository that has the following tree.
 >
@@ -84,7 +84,7 @@ git merge --ff-only <branch>
 
 If using the fast-forward merge, it is impossible to see from the `git` history which of the commit objects together have implemented a feature. You would have to manually read all the log messages. Reverting a whole feature (i.e. a group of commits), is a true headache in the latter situation, whereas it is easily done if the --no-ff flag was used.
 
-For a good illustration of fast-forward merge (and other concepts), see this thread: https://stackoverflow.com/questions/9069061/what-effect-does-the-no-ff-flag-have-for-git-merge
+For a good illustration of fast-forward merge (and other concepts), see this [thread](https://stackoverflow.com/questions/9069061/what-effect-does-the-no-ff-flag-have-for-git-merge).
 
 ## Exercise: Creating a fast-forwad merge.
 
@@ -114,10 +114,10 @@ git merge <branch> [-s <strategy>]
 ~~~
 {: .language-bash}
 
-See https://git-scm.com/docs/merge-strategies for a zillion options (“patience”, “octopus”, etc),  But also git is only so smart and you are probably smarter.
+See [here](https://git-scm.com/docs/merge-strategies) for a zillion options (“patience”, “octopus”, etc),  But also git is only so smart and you are probably smarter.
 
 
-Merging strategies: https://git-scm.com/docs/merge-strategies
+See [here](https://git-scm.com/docs/merge-strategies) and [here](https://nvie.com/posts/a-successful-git-branching-model/) for some discussion of merging strategies. 
 
 [comment]: <> (![Merging 1](../fig/09-merging-1.png))
 [comment]: <> (![Merging 2](../fig/10-merging-2.png)
@@ -125,7 +125,6 @@ Merging strategies: https://git-scm.com/docs/merge-strategies
 [comment]: <> (![Merging no FF](../fig/12-merging-noff.png))
 [comment]: <> (![Merging 3 Way](../fig/13-merging-3way.png))
 
-https://nvie.com/posts/a-successful-git-branching-model/
 
 Note: there are a number of external tools that have a graphical interface to allow for merge conflict resolution. Some of these include: kdiff3 (Windows, Mac, Linux), Meld (Windows, Linux), P4Merge (Windows, Mac, Linux),  opendiff (Mac), vimdiff (for Vim users), Beyond Compare, GitHub web interface. We do not endorse any of them and use at your own risk. In any case, using a graphical interface does not substitute for understanding what is happening under the hood.
 

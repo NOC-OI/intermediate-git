@@ -10,15 +10,7 @@ keypoints:
 
 ---
 
-Sharing code openly promotes collaboration, transparency, and innovation by allowing others to review, use, and 
-improve the code. 
-It fosters knowledge exchange, accelerates scientific progress, and enhances the reproducibility of research. 
-Additionally, open sharing encourages community contributions and can lead to better-maintained, 
-more reliable software.
-
-Adding a [license](../learners/licensing.md) and other metadata to our code (covered in the previous episode) are the first steps towards 
-sharing the code publicly.
-There are several other important steps to consider which we will cover here.
+Some introductory text.
 
 ## Working with collaborators
 
@@ -52,18 +44,16 @@ A good issue description should include:
 
 After the issue is created it will be assigned a sequential ID number.
 
-:::  challenge
-
-### Write an issue to describe our bug
-
-Create a new issue in your repository's issue tracker by doing the following:
-
- - Go to the GitHub webpage for your code
- - Click on the Issues tab
- - Click on the "New issue" button
- - Enter a title and description for the issue
- - Click the "Submit Issue" button to create the issue.
-:::
+>## Write an issue to describe our bug
+>
+> Create a new issue in your repository's issue tracker by doing the following:
+>
+> - Go to the GitHub webpage for your code
+> - Click on the Issues tab
+> - Click on the "New issue" button
+> - Enter a title and description for the issue
+> - Click the "Submit Issue" button to create the issue.
+{: .challenge}
 
 ### Discussing an issue
 

@@ -59,8 +59,6 @@ software.
 Let us now look into how we can archive a GitHub repository to Zenodo. 
 Note that, instead of using the real Zenodo website, we will practice with [Zenodo Sandbox](https://sandbox.zenodo.org/).
 
-::: callout
-
 > ### Zenodo Sandbox
 > [Zenodo Sandbox](https://sandbox.zenodo.org/) is a testing environment for Zenodo, a repository for research outputs, 
 > allowing users to safely experiment with its features without affecting the live system.
@@ -114,34 +112,26 @@ Here is the badge for this repository and the corresponding Markdown:
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11869450.svg)](https://doi.org/10.5281/zenodo.11869450)
 ```
 
-:::  challenge
+> ### Archive your repository to Zenodo (Sandbox)
+> Note: for this exercise, as demonstrated earlier, you should use the [Sandbox Zenodo](https://sandbox.zenodo.org/) (a version of 
+> Zenodo for testing and playing with before minting a real DOI).
+> For real software releases, you should use Zenodo.
+>
+> * Create an account on Zenodo Sandbox that is linked to your GitHub account.
+> * Use Zenodo Sandbox to create a release for your repository and obtain a DOI for it.
+> * Get the link to the DOI badge for your repository and add a link to this image to your README file in 
+> Markdown format. Check that this is the DOI for the latest version and not the DOI for a specific version, 
+> if not you will be updating this every time you make a release.
+{: .challenge}
 
-### Archive your repository to Zenodo (Sandbox)
+> ## Problems with GitHub and Zenodo integration
+> The integration between GitHub and Zenodo does not interact well with some browser privacy features and extensions. 
+> Firefox can be particularly problematic with this and 
+> might open new tabs to login to GitHub and then give an error saying: `Your browser did something unexpected. 
+> Please try again. If the error continues, try disabling all browser extensions.`
+> If this happens try disabling the extra privacy features/extensions or using another browser such as Chrome.
+{: .callout}
 
-Note: for this exercise, as demonstrated earlier, you should use the [Sandbox Zenodo](https://sandbox.zenodo.org/) (a version of 
-Zenodo for testing and playing with before minting a real DOI).
-For real software releases, you should use Zenodo.
-
- * Create an account on Zenodo Sandbox that is linked to your GitHub account.
- * Use Zenodo Sandbox to create a release for your repository and obtain a DOI for it.
- * Get the link to the DOI badge for your repository and add a link to this image to your README file in 
-Markdown format. Check that this is the DOI for the latest version and not the DOI for a specific version, 
-if not you will be updating this every time you make a release.
-
-:::::::::::::::::::::::::::::::::::::::::::::::
-
-
-::: callout
-
-## Problems with GitHub and Zenodo integration
-
-The integration between GitHub and Zenodo does not interact well with some browser privacy features and extensions. 
-Firefox can be particularly problematic with this and 
-might open new tabs to login to GitHub and then give an error saying: `Your browser did something unexpected. 
-Please try again. If the error continues, try disabling all browser extensions.`
-If this happens try disabling the extra privacy features/extensions or using another browser such as Chrome.
-
-:::
 
 ### Adding a DOI and ORCID to the citation file
 

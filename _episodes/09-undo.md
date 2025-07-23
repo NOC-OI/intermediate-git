@@ -176,7 +176,6 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
-{: .challenge}
 >
 > - Revert the last commit that we just inserted. Check the history.
 > 
@@ -187,7 +186,6 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
-{: .challenge}
 >
 > - Completely throw away the last two commits [DANGER ZONE!!!]. Check the status and the log.
 > 
@@ -199,7 +197,6 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
-{: .challenge}
 >
 > - Undo another commit but leave it in the staging area. Check the status and log.
 > 
@@ -211,7 +208,6 @@ Also OMG: http://blog.kfish.org/2010/04/git-lola.html
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
-{: .challenge}
 >
 > - Wrap it up: add and commit the changes.
 > 

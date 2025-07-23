@@ -47,7 +47,7 @@ FIXME: Alt text. Remove text from image and add as caption, source?
 
 FIXME: More description about what is happening at each step in the solution
 
-### Exercise 1: Create and push a feature branch
+>## Exercise 1: Create and push a feature branch
 > You will be assigned a number by the instructor/helper. 
 > Create a feature branch based on upstream main. Then create a file in the `trainees` folder called `hello_NNN.txt` using the number you just got (replace NNN with your number, e.g. 007).
 > Then push your featurebranch out to GitHub.
@@ -65,10 +65,10 @@ FIXME: More description about what is happening at each step in the solution
 > {: .solution}
 {: .challenge}
 
-### Exercise 2: Suggest your changes via pull request
-
+>## Exercise 2: Suggest your changes via pull request
+>
 > Go to your repository (your fork) on GitHub and find the tab called "Pull requests". Klick the green "new pull request" button. Then find and click the blue link uder "Compare changes" called "compare across fork". Select your username and branch name from the right menus. Then click the big green button under the menus called "create pull request".
-
+>
 > > ## Solution
 > > ![GitFlow 1](../fig/32-forking-6.png)
 > {: .solution}

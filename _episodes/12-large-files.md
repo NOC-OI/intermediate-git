@@ -1,5 +1,5 @@
 ---
-title: "Large Files"
+title: "Odd things to know about Files"
 teaching: 0
 exercises: 0
 questions:

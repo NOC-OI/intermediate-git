@@ -1,5 +1,5 @@
 ---
-title: "Undoing Changes"
+title: "Advanced Logging"
 teaching: 0
 exercises: 0
 questions:

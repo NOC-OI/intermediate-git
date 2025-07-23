@@ -3,7 +3,6 @@ title: "Undoing Changes"
 teaching: 0
 exercises: 0
 questions:
-- "How do I undo changes?"
 - "I've just made a mistake, how can I undo it?"
 objectives:
 - "How do I roll back a single change?"

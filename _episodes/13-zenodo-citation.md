@@ -1,5 +1,5 @@
 ---
-title: "Large Files"
+title: "Publishing and Citing Code"
 teaching: 0
 exercises: 0
 questions:

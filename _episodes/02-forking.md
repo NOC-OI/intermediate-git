@@ -1,5 +1,5 @@
 ---
-title: "Forking Workflow"
+title: "Forks"
 teaching: 0
 exercises: 0
 questions:

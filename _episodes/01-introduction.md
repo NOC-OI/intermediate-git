@@ -108,7 +108,182 @@ https://mermaid.ink/svg/pako:eNqFksFuwyAMhl8FcemmdS_AodKm7rZe2sOkKRcXnAQNcEaMpqj
 
 ![Software development lifecycle with Git](../fig/git-lifecycle.svg)
 
-## Setting Up SSH Keys
+## Git Version Control Tool
+
+To test your Git installation, type:
+
+```bash
+$ git help
+```
+
+If your Git installation is working you should see something like:
+
+```output
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+```
+
+When you use Git on a machine for the first time, you need to configure a few things:
+
+- your name,
+- your email address (the one you used to open your GitHub account with, which will be used to uniquely identify your commits),
+- preferred text editor for Git to use (e.g. `nano` or another text editor of your choice),
+- whether you want to use these settings globally (i.e. for every Git project on your machine).
+
+This can be done from the command line as follows:
+
+```bash
+$ git config --global user.name "Your Name"
+$ git config --global user.email "name@example.com"
+$ git config --global core.editor "nano -w"
+```
+
+### GitHub Account
+
+GitHub is a free, online host for Git repositories that you will use during the course to store your code in so
+you will need to open a free [GitHub](https://github.com/) account unless you do not already have one.
+
+### Secure Access To GitHub Using Git From Command Line
+
+In order to access GitHub using Git from your machine securely,
+you need to set up a way of authenticating yourself with GitHub through Git.
+The recommended way to do that for this course is to set up
+[*SSH authentication*](https://www.ssh.com/academy/ssh/public-key-authentication) -
+a method of authentication that is more secure than sending
+[*passwords over HTTPS*](https://security.stackexchange.com/questions/110415/is-it-ok-to-send-plain-text-password-over-https)
+and which requires a pair of keys -
+one public that you upload to your GitHub account, and one private that remains on your machine.
+
+GitHub provides full documentation and guides on how to:
+
+- [generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), and
+- [add an SSH key to a GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+A short summary of the commands you need to perform is shown below.
+
+To generate an SSH key pair, you will need to run the `ssh-keygen` command from your command line tool/GitBash
+and provide **your identity for the key pair** (e.g. the email address you used to register with GitHub)
+via the `-C` parameter as shown below.
+Note that the `ssh-keygen` command can be run with different parameters -
+e.g. to select a specific public key algorithm and key length;
+if you do not use them `ssh-keygen` will generate an
+[RSA](https://en.wikipedia.org/wiki/RSA_\(cryptosystem\)#:~:text=RSA%20involves%20a%20public%20key,by%20using%20the%20private%20key.)
+key pair for you by default.
+GitHub now recommends that you use a newer cryptographic standard (such as [EdDSA](https://en.wikipedia.org/wiki/EdDSA) variant algorithm [Ed25519](https://cryptobook.nakov.com/digital-signatures/eddsa-and-ed25519)),
+so please be sure to specify it using the `-t` flag as shown below.
+It will also prompt you to answer a few questions -
+e.g. where to save the keys on your machine and a passphrase to use to protect your private key.
+Pressing 'Enter' on these prompts will get `ssh-keygen` to use the default key location (within
+`.ssh` folder in your home directory)
+and set the passphrase to empty.
+
+```bash
+$ ssh-keygen -t ed25519 -C "your-github-email@example.com"
+```
+
+```output
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/<YOUR_USERNAME>/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/<YOUR_USERNAME>/.ssh/id_ed25519
+Your public key has been saved in /Users/<YOUR_USERNAME>/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:qjhN/iO42nnYmlpink2UTzaJpP8084yx6L2iQkVKdHk your-github-email@example.com
+The key's randomart image is:
++--[ED25519 256]--+
+|.. ..            |
+| ..o A           |
+|. o..            |
+| .o.o .          |
+| ..+ =  B        |
+| .o = ..         |
+|o..X *.          |
+|++B=@.X          |
+|+*XOoOo+         |
++----[SHA256]-----+
+```
+
+Next, you need to copy your public key (**not your private key - this is important!**) over to
+your GitHub account. The `ssh-keygen` command above will let you know where your public key is saved (the file should have the
+extension ".pub"), and you can get its contents (e.g. on a Mac OS system) as follows:
+
+```bash
+$ cat /Users/<YOUR_USERNAME>/.ssh/id_ed25519.pub
+```
+
+```output
+ssh-ed25519 AABAC3NzaC1lZDI1NTE5AAAAICWGVRsl/pZsxx85QHLwSgJWyfMB1L8RCkEvYNkP4mZC your-github-email@example.com
+```
+
+Copy the line of output that starts with "ssh-ed25519" and ends with your email address
+(it may start with a different algorithm name based on which one you used to generate the key pair
+and it may have gone over multiple lines if your command line window is not wide enough).
+
+Finally, go to your [GitHub Settings -> SSH and GPG keys -> Add New](https://github.com/settings/ssh/new) page to add a new
+SSH public key. Give your key a memorable name (e.g. the name of the computer you are working on that contains the
+private key counterpart), paste the public key
+from your clipboard into the box labelled "Key" (making sure it does not contain any line breaks), then click the "Add SSH key" button.
+
+Now, we can check that the SSH connection is working:
+
+```bash
+$ ssh -T git@github.com
+```
+
+>## What About Passwords?
+> While using passwords over HTTPS for authentication is easier to setup and will allow you *read access* to your repository on GitHub from your machine,
+> it alone is not sufficient any more to allow you to send changes or *write* to your remote repository on GitHub. This is because,
+> on 13 August 2021, GitHub has [strengthened security requirements for all authenticated Git operations](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/). This means you would need to use a
+> personal access token instead of your password for added security each time you need to authenticate yourself to
+> GitHub from the command line (e.g. when you want to push your local changes to your code repository on GitHub).
+> While using
+> SSH key pair for authentication may seem complex, once set up, it is actually more convenient than keeping track of/caching
+> your access token.
+{: .callout}
+
 
 
 {% include links.md %}

@@ -30,6 +30,10 @@ $ cd intermediate-git-test-repo
 $ git switch broken
 ~~~
 {: .language-bash}
+
+
+## Tracking down a broken commit
+
 Let's take a look at the contents of this repository
 ~~~
 $ ls
@@ -70,7 +74,7 @@ $ git checkout broken
 ~~~
 {: .language-bash}
 
-## `git blame`
+### Tracking down broken commits with `git blame`
 
 If we know where the problem is in the file, we might ask ourselves what (and who) introduced this problem. What commit introduced this line. Let's try this with
 ~~~

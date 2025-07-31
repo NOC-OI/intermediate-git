@@ -250,4 +250,22 @@ upstream branch. We can verify this with
 $ git pull -v
 ~~~
 
+>## Exercise 1: Create a feature branch
+> You will be assigned a number by the instructor/helper. 
+> Create a feature branch based on upstream main. Then create a file in the `trainees` folder called `hello_NNN.txt` using the number you just got (replace NNN with your number, e.g. 007).
+> Then push your featurebranch out to GitHub.
+>
+> > ## Solution
+> > ~~~
+> > git fetch upstream main
+> > git checkout -b myforkfeature upstream/main
+> > touch ./triainees/hello_NNN.txt
+> > git add ./triainees/hello_NNN.txt
+> > git commit -m "adding my textfile"
+> > git push origin myforkfeature
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
+
 {% include links.md %}

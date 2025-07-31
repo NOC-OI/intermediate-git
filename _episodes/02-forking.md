@@ -7,7 +7,8 @@ questions:
 objectives:
 - "Understand how forks are created."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "A fork is a server-side copy of a repository"
+- "A fork can be created on Github through the `Fork` button in the top right"
 ---
 
 A fork of a repository is a new repository which shares code and history with the repository it was forked from - it is a server-side copy (clone) of the original repository. This is particularly useful when you want to work on an open source project where you don't have write permissions to the repository.
@@ -29,5 +30,7 @@ git clone git@github.com:NOC-OI/intermediate-git-test-repo.git
 > Follow the above instructions to create a fork of the intermediate-git-test-repo.
 > Then create a local copy of it.
 {: .challenge}
+
+We'll discuss forking further in the Remotes and Branching Models chapters.
 
 {% include links.md %}

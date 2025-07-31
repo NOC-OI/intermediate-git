@@ -117,18 +117,19 @@ git branch -m <old-branch-name> <new-branch-name>
 {: .language-bash}
 
 >## Exercise 1: Create a feature branch
-> You will be assigned a number by the instructor/helper. 
-> Create a feature branch based on upstream main. Then create a file in the `trainees` folder called `hello_NNN.txt` using the number you just got (replace NNN with your number, e.g. 007).
-> Then push your featurebranch out to GitHub.
+> Create a feature branch in your local copy of intermediate-git-test-repo. Make a change to the `plot_buoys.py` script, such as changing the colour of the buoy symbols on line 28.
+> Commit your change and push it to your fork on Github.
 >
 > > ## Solution
 > > ~~~
-> > git fetch upstream main
-> > git checkout -b myforkfeature upstream/main
-> > touch ./triainees/hello_NNN.txt
-> > git add ./triainees/hello_NNN.txt
-> > git commit -m "adding my textfile"
-> > git push origin myforkfeature
+> > git branch featue-branch
+> > ~~~
+> > {: .language-bash}
+> > Make some edit to `plot_buoys.py`.
+> > ~~~
+> > git add plot_buoys.py
+> > git commit -m "Change colour of buoy marker"
+> > git push origin main
 > > ~~~
 > > {: .language-bash}
 > {: .solution}

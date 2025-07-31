@@ -10,9 +10,9 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-We want this to be a reminder of how to work with forks
+A fork of a repository is a new repository which shares code and history with the repository it was forked from - it is a server-side copy (clone) of the original repository. This is particularly useful when you want to work on an open source project where you don't have write permissions to the repository.
 
-## Creating a fork
+## Creating a fork and a local copy of the fork
 
 In order to try out the commands in this lesson we need to set up a repository on GitHub:
 

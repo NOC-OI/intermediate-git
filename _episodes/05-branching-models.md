@@ -15,7 +15,7 @@ keypoints:
 
 ## What is a branching model/strategy?
 
-Branches are primarily used as a means for teams to develop features giving them a separate workspace for their code. These branches are usually merged back to a master branch upon completion of work. In this way, features (and any bug and bug fixes) are kept apart from each other allowing you to fix mistakes more easily.
+Branches are primarily used as a means for teams to develop features giving them a separate workspace for their code. These branches are usually merged back to a main branch upon completion of work. (You may come across the term 'master', rather than 'main'. This used to be the usual term, but is now gradually becoming less common.) In this way, features (and any bug and bug fixes) are kept apart from each other allowing you to fix mistakes more easily.
 
 This means that branches protect the mainline of code and any changes made to any given branch don’t affect other developers.
 
@@ -27,13 +27,13 @@ Such a strategy is necessary as it helps keep repositories organized to avoid er
 
 Thus, adhering to a branching strategy will help solve this issue so that developers can work together without stepping on each other’s toes. In other words, it enables teams to work in parallel to achieve faster releases and fewer conflicts by creating a clear process when making changes to source control.
 
-When we talk about branches, we are referring to independent lines of code that branch off the master branch, allowing developers to work independently before merging their changes back to the code base.
+When we talk about branches, we are referring to independent lines of code that branch off the main branch, allowing developers to work independently before merging their changes back to the code base.
 
 In this and the following episodes, we will outline some of the branching strategies that teams use in order to organize their workflow where we will look at their pros and cons and which strategy you should choose based on your needs, objectives and your team’s capabilities.
 
 ## Why do you need a branching model?
 
-As mentioned above, having a branching model is necessary to avoid conflicts when merging and to allow for the easier integration of changes into the master trunk.
+As mentioned above, having a branching model is necessary to avoid conflicts when merging and to allow for the easier integration of changes into the main trunk.
 
 A BRANCHING MODEL AIMS TO:
 - Enhance productivity by ensuring proper coordination among developers
@@ -49,7 +49,7 @@ Some version control systems are Very Opinionated about the branching models tha
 
 That said, there are a number of established (and less so) branching models that are used with `git`. These include, but are not limited to:
 
-- **Centralized workflow**: enables all team members to make changes directly to the main branch. Every change is logged into the history. In this workflow, the contributors do not use other branches. Instead they all make changes on the main branch directly and commit to it. This woks for individual developers or small thema which communicate very well, but can be tricky for larger teams: the code is in constant state of flux and developers keep changes local until they are ready to release.
+- **Centralized workflow**: enables all team members to make changes directly to the main branch. Every change is logged into the history. In this workflow, the contributors do not use other branches. Instead they all make changes on the main branch directly and commit to it. This works for individual developers or small teams which communicate very well, but can be tricky for larger teams: the code is in constant state of flux and developers keep changes local until they are ready to release.
 
 - **Trunk-based development**: is somewhat similar to the centralized workflow. The development happens on a single branch called `trunk`. When changes need to be merged, each developer pulls and rebases from the trunk branch and resolves conflicts locally. This can work if small merges are made frequently and is more successful if there is CI/CD.
   
@@ -63,7 +63,7 @@ That said, there are a number of established (and less so) branching models that
 
 - **Oneflow**: is similar to Gitflow but relies on the maintanance of one long-lived branch. It is meant to be simpler, without a develop branch but feature branches still exist.  ([Further info](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow))
   
-- **Forking workflow** (e.g. astropy): is a model where each contributor creates a `fork` or a complete copy of the repository. Every contribitor effectively has two repositories: his own and the main (upstream) one. Changes are made as pull requests against the main repository. This model is propular with open source projects because the vast majority of contributors do not need to have priviledges in the main repository. 
+- **Forking workflow** (e.g. astropy): is a model where each contributor creates a `fork` or a complete copy of the repository. Every contributor effectively has two repositories: his own and the main (upstream) one. Changes are made as pull requests against the main repository. This model is popular with open source projects because the vast majority of contributors do not need to have priviledges in the main repository. 
 
 A longer description of some of these can be found [here](https://about.gitlab.com/topics/version-control/what-is-git-workflow/#feature-branching-git-workflow).
 

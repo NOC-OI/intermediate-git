@@ -106,7 +106,7 @@ The special symbol `"HEAD"` can always be used to refer to the current branch. I
 
 ~~~
 $ cat .git/HEAD
-ref: refs/heads/master
+ref: refs/heads/main
 ~~~
 {: .language-bash}
 

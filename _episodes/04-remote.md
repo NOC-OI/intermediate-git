@@ -3,16 +3,13 @@ title: "Remote Repositories"
 teaching: 0
 exercises: 0
 questions:
-- "How do I connect my code to other versions of the it?"
 - "How can I work in remote teams and with remotely hosted code?"
 objectives:
-- "Learn about remote repositories."
 - "Learn to work with multiple remotes"
 keypoints:
 - "The `git remote` command allows us to create, view and delete connections to other repositories."
 - "Remote connections are like bookmarks to other repositories."
 - "Other git commands (`git fetch`, `git push`, `git pull`) use these bookmarks to carry out their syncing responsibilities."
-- "We've been introduced to remotes and working with multiple remotes"
 ---
 
 https://www.atlassian.com/git/tutorials/syncing

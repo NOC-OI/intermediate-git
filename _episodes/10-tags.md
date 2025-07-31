@@ -11,7 +11,7 @@ keypoints:
 - "A tag is tied to a commit. "
 ---
 
-A tag is a marker of a specic commit in the project history. You can think of it as a permanent bookmark. Tags can be created to point to a release version, a major code change, a state of the code that was used to produce a paper or a data release, or any other event you (or the development team) may want to reference in the future. 
+A tag is a marker of a specific commit in the project history. You can think of it as a permanent bookmark. Tags can be created to point to a release version, a major code change, a state of the code that was used to produce a paper or a data release, or any other event you (or the development team) may want to reference in the future. 
 
 Once a tag has been created, no other changes can be added to it. But you can delete it and create a new one with the same name. 
 
@@ -48,9 +48,9 @@ git tag -a 2.0.0 -m <message>
 ~~~
 {: .language-bash}
 
-It is also possible to tag a past commit by providing that commit's SHA:
+It is also possible to tag a past commit by providing that commit's hash:
 ~~~
-git tag -a <tag> [<SHA>] -m <message>
+git tag -a <tag> [<hash>] -m <message>
 ~~~
 {: .language-bash}
 
@@ -80,5 +80,40 @@ git tag -d <tag>
 {: .language-bash}
 
 Since tags are frequently used to do releases, it is useful to be aware that codebases and languages have standards on how release versions should be labled. If you are working with an existing code base, follow the standard set by the dev team. If you are developing a library by yourself, follow the standards for the language. For example, the [Python Packaging Authority](https://packaging.python.org/en/latest/specifications/version-specifiers/#version-specifiers) (and previously [PEP440](https://peps.python.org/pep-0440/)) specifies the scheme for identifying versions for `python` libraries. 
+
+## Referring to Commits
+We've seen a bunch of different type of arguments passed to commands such as git checkout. For example, references to HEAD
+~~~
+$ git log -1 HEAD
+~~~
+{: .language-bash}
+or an ancestry reference
+~~~
+$ git log HEAD~3
+~~~
+{: .language-bash}
+or to a local branch
+~~~
+$ git log -1 main
+~~~
+{: .language-bash}
+or a remote branch
+~~~
+$ git log -1 origin/main
+~~~
+{: .language-bash}
+or a tagged commit
+~~~
+$ git log -1 0.4.1
+~~~
+{: .language-bash}
+or an abbreviated commit ID
+~~~
+$ git log -1 1ffb
+~~~
+{: .language-bash}
+
+
+Git is clever about allow you to use any way is most convenient, and will ultimately (in most cases) translate them all to a commit reference behind the scenes.
 
 {% include links.md %}

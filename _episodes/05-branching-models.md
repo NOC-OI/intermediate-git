@@ -134,7 +134,7 @@ The forking workflow is popular among open source software projects and often us
 The focus of this workflow is to keep the "upstream main" stable while allowing anyone to work on their own contributions independently. Contributions are then suggested and accepted via pull requests. There is not necessarily a develop branch, but you may have release branches.
 
 ![GitFlow 1](../fig/27-forking-1-Copy.png)
-<p style="text-align: center;">Source: GitHub<br>
+<p style="text-align: center;">Source: GitHub<br></p>
 
 In order to understand the forking workflow, let's first take a look at some special words and roles needed: 
 

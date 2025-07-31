@@ -7,8 +7,8 @@ questions:
 objectives:
 - "Learn to identify when and in what commit problems were introduced"
 keypoints:
-- "Learnt to use git blame to identify when a problem line was introduced"
-- "Learnt to use binary searches to identify lines which first introduce a problem"
+- `git blame` can identify when a problem line was introduced.
+- `git bisect` can be used to binary search through git history to identify lines which first introduced a problem.
 
 ---
 

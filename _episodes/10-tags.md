@@ -81,4 +81,48 @@ git tag -d <tag>
 
 Since tags are frequently used to do releases, it is useful to be aware that codebases and languages have standards on how release versions should be labled. If you are working with an existing code base, follow the standard set by the dev team. If you are developing a library by yourself, follow the standards for the language. For example, the [Python Packaging Authority](https://packaging.python.org/en/latest/specifications/version-specifiers/#version-specifiers) (and previously [PEP440](https://peps.python.org/pep-0440/)) specifies the scheme for identifying versions for `python` libraries. 
 
+## Referring to Commits
+We've seen a bunch of different type of arguments passed to commands such as git checkout. For example, references to HEAD
+~~~
+$ git log -1 HEAD
+~~~
+{: .language-bash}
+or to a local branch
+~~~
+$ git log -1 master
+~~~
+{: .language-bash}
+or a remote branch
+~~~
+$ git log -1 origin/main
+~~~
+{: .language-bash}
+or a tagged commit
+~~~
+$ git log -1 0.4.1
+~~~
+{: .language-bash}
+or a reference log entry
+~~~
+$ git log -1 HEAD@{5}
+~~~
+{: .language-bash}
+or a reference as it was some time ago
+~~~
+$ git log -1 master@{1.hour.10.minutes.ago}
+~~~
+{: .language-bash}
+or an abbreviated commit ID
+~~~
+$ git log -1 1ffb
+~~~
+{: .language-bash}
+or an ancestry reference
+~~~
+$ git log HEAD~3
+~~~
+{: .language-bash}
+
+Git is clever about allow you to use any way is most convenient, and will ultimately (in most cases) translate them all to a commit reference behind the scenes.
+
 {% include links.md %}

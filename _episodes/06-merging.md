@@ -128,4 +128,8 @@ See [here](https://git-scm.com/docs/merge-strategies) and [here](https://nvie.co
 
 Note: there are a number of external tools that have a graphical interface to allow for merge conflict resolution. Some of these include: kdiff3 (Windows, Mac, Linux), Meld (Windows, Linux), P4Merge (Windows, Mac, Linux),  opendiff (Mac), vimdiff (for Vim users), Beyond Compare, GitHub web interface. We do not endorse any of them and use at your own risk. In any case, using a graphical interface does not substitute for understanding what is happening under the hood.
 
+## Resolving Conflicts
+
+## Squashing
+
 {% include links.md %}

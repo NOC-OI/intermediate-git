@@ -44,9 +44,9 @@ The repository history remains unchanged. All you get is a new pointer to the cu
 ![Git Branching](../fig/05-branching.png)
 
 
-Note that this only creates the new branch. To start adding commits to it, you need to select it with `git checkout`, and then use the standard `git add` and `git commit` commands.
+Note that this only creates the new branch. To start adding commits to it, you need to select it with `git switch`, and then use the standard `git add` and `git commit` commands.
 
-A branch *also* means an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. New commits are recorded in the history for the current branch, which results in a fork in the history of the project. However, it is really important to remember that each commit only records the incremental change in the document and NOT the full history of changes. Therefore, while we think of a branch as a sequence of commits, each commit is independent unit of change.
+A branch *also* means an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. New commits are recorded in the history for the current branch, which results in a fork in the history of the project. However, it is really important to remember that each commit only records the incremental change in the document and NOT the full history of changes. Therefore, while we think of a branch as a sequence of commits, each commit is an independent unit of change.
 
 ## Branching Commands
 
@@ -95,7 +95,7 @@ git switch <branch>
 ~~~
 {: .language-bash}
 
-To create a new branch `<new>` referencing `<start-point>`, and check it out.
+To create a new branch `<new>` referencing `<start-point>`, and switch to it.
 
 ~~~
 git switch -c <new> <start-point>
@@ -106,7 +106,7 @@ The special symbol `"HEAD"` can always be used to refer to the current branch. I
 
 ~~~
 $ cat .git/HEAD
-ref: refs/heads/master
+ref: refs/heads/main
 ~~~
 {: .language-bash}
 
@@ -115,5 +115,25 @@ Renaming a branch can be done with the `-m` tag:
 git branch -m <old-branch-name> <new-branch-name>
 ~~~
 {: .language-bash}
+
+>## Exercise 1: Create a feature branch
+> Create a feature branch in your local copy of intermediate-git-test-repo. Make a change to the `plot_buoys.py` script, such as changing the colour of the buoy symbols on line 28.
+> Commit your change and push it to your fork on Github.
+>
+> > ## Solution
+> > ~~~
+> > git branch featue-branch
+> > git switch featue-branch
+> > ~~~
+> > {: .language-bash}
+> > Make some edit to `plot_buoys.py`.
+> > ~~~
+> > git add plot_buoys.py
+> > git commit -m "Change colour of buoy marker"
+> > git push origin feature-branch
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}

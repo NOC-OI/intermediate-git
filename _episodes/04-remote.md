@@ -3,16 +3,13 @@ title: "Remote Repositories"
 teaching: 0
 exercises: 0
 questions:
-- "How do I connect my code to other versions of the it?"
 - "How can I work in remote teams and with remotely hosted code?"
 objectives:
-- "Learn about remote repositories."
 - "Learn to work with multiple remotes"
 keypoints:
 - "The `git remote` command allows us to create, view and delete connections to other repositories."
 - "Remote connections are like bookmarks to other repositories."
 - "Other git commands (`git fetch`, `git push`, `git pull`) use these bookmarks to carry out their syncing responsibilities."
-- "We've been introduced to remotes and working with multiple remotes"
 ---
 
 https://www.atlassian.com/git/tutorials/syncing
@@ -40,7 +37,7 @@ git remote
 ~~~
 {: .language-bash}
 
-If you test this in our training repository, you should get only one connection, `origin`:
+If you test this in the local repo you've created, you should get only one connection, `origin`:
 ~~~
 origin
 ~~~
@@ -58,12 +55,12 @@ git remote -v
 For our training repository this should return:
 
 ~~~
-origin	https://github.com/user_name/advanced-git-training.git (fetch)
-origin	https://github.com/user_name/advanced-git-training.git (push)
+origin	git@github.com:<user-name>/intermediate-git-test-repo.git (fetch)
+origin	git@github.com:<user-name>/intermediate-git-test-repo.git (push)
 ~~~
 {: .output}
 
-As expected these point to the original repository we cloned.
+As expected these point to the repository you cloned.
 
 ## Create and Modify Connections
 
@@ -96,21 +93,26 @@ git show <name>
 ~~~
 {: .language-bash}
 
-Exercise: Add a connection to your neighbour's repository. Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.
+>## Exercise 1: Add a connection to your neighbour's repository. 
+> Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.
+>
+> > ## Solution
+> > ~~~
+> > git remote add john http://dev.example.com/john.git
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
 
-~~~
-git remote add john http://dev.example.com/john.git
-~~~
-{: .language-bash}
 
-
-## Starting a branch from the main repository state:
+## Multiple remotes
 
 Remember that when you create a new branch without specifying a starting point, then the starting point will be the current state and branch. In order to avoid confusion, ALWAYS branch from the stable version. Here is how you would branch from your own origin/main branch:
 
 ~~~
 git fetch origin main
-git checkout -b <branch> origin/main
+git branch <branch> origin/main
+git switch <branch>
 ~~~
 {: .language-bash}
 
@@ -120,128 +122,31 @@ If there is another "true" version/state of the project, then this connection ma
 
 ~~~
 git fetch upstream main
-git checkout -b <branch> upstream/main
+git branch <branch> upstream/main
+git switch <branch>
 ~~~
 {: .language-bash}
 
-Now we can set the MPIA version of our repository as the upstream for our local copy.
+Now we can set the NOC-OI version of our repository as the upstream for our local copy.
 
-Exercies: set the https://github.com/mpi-astronomy/advanced-git-training as the upstream locally.
+>## Exercise 2: Setting upstream and checking out remote branches. 
+> Set the https://github.com/NOC-OI/intermediate-git-test-repo  repo as the upstream locally.
+> Then check which branches exist upstream and create a local branch with the starting point of the upstream branch called `develop`.
+>
+> > ## Solution
+> > ~~~
+> > git remote add upstream git@github.com:NOC-OI/intermediate-git-test-repo.git
+> > git fetch upstream
+> > git branch -vv -a
+> > git branch develop upstream/develop
+> > git switch develop
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+>
+> Now examine the state of your repository with `git branch`, `git branch -vva` (to see all the branches), `git remote -v` and `git remote show upstream`.
+{: .challenge}
 
-~~~
-git remote add upstream https://github.com/mpi-astronomy/advanced-git-training.git
-git fetch upstream
-git checkout -b develop upstream/develop
-~~~
-{: .language-bash}
-
-Now examine the state of your repository with `git branch`, `git remote -v`, `git remote show upstream`
-
-
-
-## Multiple remotes
-For this section we'll need some code. We'll use a popular collection of git utility scripts called "gitflow". We've got a copy prepared for the lesson at https://github.com/sa2c/example-gitflow. The first thing we want to do is create a copy of this repository for us to work on. This create a fork by clicking the fork button on the top left of the page.
-You'll be redirected after a short wait to your own personal
-repository which is a copy of one at `sa2c/example-gitflow`. We will need to
-clone the code from your fork.
-First we change directory to the desktop, with
-~~~
-$ cd ~/Desktop
-~~~
-{: .language-bash}
-Next, we find the URL of the forked repository under "Clone or download" on its github.com page. We clone clone using our own personal fork, which should look something like this:
-~~~
-$ git clone git@github.com:<username>/example-gitflow.git ~/example-gitflow-fork
-~~~
-{: .language-bash}
-Where `<username>` is your github username.
-~~~
-$ cd example-gitflow-fork
-~~~
-{: .language-bash}
-Let's check the remotes we have with the command
-~~~
-$ git remote -v
-~~~
-{: .language-bash}
-We see a single remote, named `origin`. This is set up for us by `git
-clone` when we create a new repository. It points to the place we
-downloaded the code for, in this case this is our fork of the code.
-
-Often, we may want to be able to pull changes directly from the repository we forked. For example if some other developers have made added some commits there.
-
-In order to push to multiple repositories, we need to add them as additional remotes
-~~~
-$ git remote add upstream git@github.com:sa2c/example-gitflow
-~~~
-{: .language-bash}
-We now see two repositories, `origin` and `upstream`. We can add the
-`-vv` and `-a` flags to the `git branch` command to see all branches
-~~~
-$ git branch -vv -a
-~~~
-{: .language-bash}
-we can now pull from upstream with
-~~~
-$ git pull upstream master
-~~~
-{: .language-bash}
-This will pull from `upstream/master` into the current branch
-(`master`), we can then push any changes we've pulled down to own
-repository (`origin`), using.
-~~~
-$ git push origin master 
-~~~
-{: .language-bash}
-This was not very exciting, because there are no new changes in the
-master branch of upstream. But there is in fact a `hello-gitters`
-branch which contains a small change based off `master`, which we can
-pull instead. Let's first fetch all the latest changes
-~~~
-$ git fetch -a
-~~~
-{: .language-bash}
-And take a look at `upstream/hello-gitters`
-~~~
-$ git log --oneline upstream/hello-gitters -5
-~~~
-{: .language-bash}
-This is based off `master`, so we should have no difficulty pulling it into `master`. Let's check what it contains
-~~~
-$ git diff upstream/hello-gitters master
-~~~
-{: .language-bash}
-Now that we're happy we want to merge it, we can pull with
-~~~
-$ git pull upstream hello-gitters
-~~~
-{: .language-bash}
-We could also choose to use `git merge upstream/hello-gitters`. We now
-push these changes to our repository with
-~~~
-$ git push
-~~~
-{: .language-bash}
-
-We can configure as many remotes as we like. If you work closely with friends or colleagues, it could be common for you to want to pull interesting changes from their remotes, incorporate those into your current branches, and push those changes to your remote.
-
-## Checking out remote branches
-What about branches other than `master`? Can we check those out and
-start work on them. Let's try it
-~~~
-$ git branch -vv -a
-~~~
-{: .language-bash}
-There's a branch called `develop`. We can check this out in a local branch, with
-~~~
-$ git checkout --track upstream/develop
-~~~
-{: .language-bash}
-Let's have a look at the result
-~~~
-$ git branch -vv -a
-~~~
-{: .language-bash}
 We can see that we are now on a local branch `develop`, which is
 configured to track the `develop` branch in `upstream`. Running `git
 push` and `git pull` in this branch will automatically push to the
@@ -249,5 +154,22 @@ upstream branch. We can verify this with
 ~~~
 $ git pull -v
 ~~~
+{: .language-bash}
+
+This branch has a small commit which is not in your `origin` remote.
+
+>## Exercise 3: Pushing to origin. 
+> Push these changes we've pulled down to own remote
+repository (`origin`).
+>
+> > ## Solution
+> > ~~~
+> > $ git push origin develop 
+> > ~~~
+> >{: .language-bash}
+> {: .solution}
+{: .challenge}
+
+We can configure as many remotes as we like. If you work closely with friends or colleagues, it could be common for you to want to pull interesting changes from their remotes, incorporate those into your current branches, and push those changes to your remote.
 
 {% include links.md %}

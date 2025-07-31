@@ -136,26 +136,23 @@ The focus of this workflow is to keep the "upstream main" stable while allowing 
 ![GitFlow 1](../fig/27-forking-1-Copy.png)
 <p style="text-align: center;">Source: GitHub<br></p>
 
-In order to understand the forking workflow, let's first take a look at some special words and roles needed: 
+In order to understand the forking workflow, let's first take a look at some special words and roles needed (we've already talked about some of these today!): 
 
 *upstream* - Remote repository containing the "true copy"
+
 *origin* - Remote repository containing the forked copy
+
 Pull request(PR) - Merge request from fork to upstream (a request to add your suggestions to the "original copy")
+
 Maintainer - Someone with write access to upstream who vets PRs
+
 Contributor - Someone who contributes to upstream via PRs
+
 Release manager - A maintainer who also oversees releases
 
 [Example release workflow for the astropy Python package](https://docs.astropy.org/en/latest/development/maintainers/releasing.html)
+
 [Spacetelescope (STScI) style guide for release workflow](https://github.com/spacetelescope/style-guides/blob/master/guides/release-workflow.md)
-
-
-![GitFlow 1](../fig/29-forking-3.png){Alt: A brief refresher from Git Training: The figure shows the local computer ("You") with branch1 that includes three files of which one is indicated as removed. An arrow from the local computer points to the cloud in which origin and upstream are located, with a picture of GitHubs Octocat. The arrow from local points to origin with you/code(branch1), also with three files of which the same is indicated as removed. Origin has an arrow pointing to upstream with "PR" written on top of it and a screenshot of the "merge pull request" button from the GitHub webinterface. Upstream has spacetelescope/code (main) with the same three files of which the same file is indicated as removed as in local and origin.}
-
-FIXME: Remove text from image and add as caption, source?
-
-![GitFlow 1](../fig/30-forking-4.png){Alt: ...}
-
-FIXME: Alt text. Remove text from image and add as caption, source?
 
 ## Exercises
 

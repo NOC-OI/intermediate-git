@@ -44,9 +44,9 @@ The repository history remains unchanged. All you get is a new pointer to the cu
 ![Git Branching](../fig/05-branching.png)
 
 
-Note that this only creates the new branch. To start adding commits to it, you need to select it with `git checkout`, and then use the standard `git add` and `git commit` commands.
+Note that this only creates the new branch. To start adding commits to it, you need to select it with `git switch`, and then use the standard `git add` and `git commit` commands.
 
-A branch *also* means an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. New commits are recorded in the history for the current branch, which results in a fork in the history of the project. However, it is really important to remember that each commit only records the incremental change in the document and NOT the full history of changes. Therefore, while we think of a branch as a sequence of commits, each commit is independent unit of change.
+A branch *also* means an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. New commits are recorded in the history for the current branch, which results in a fork in the history of the project. However, it is really important to remember that each commit only records the incremental change in the document and NOT the full history of changes. Therefore, while we think of a branch as a sequence of commits, each commit is an independent unit of change.
 
 ## Branching Commands
 
@@ -95,7 +95,7 @@ git switch <branch>
 ~~~
 {: .language-bash}
 
-To create a new branch `<new>` referencing `<start-point>`, and check it out.
+To create a new branch `<new>` referencing `<start-point>`, and switch to it.
 
 ~~~
 git switch -c <new> <start-point>
@@ -115,5 +115,23 @@ Renaming a branch can be done with the `-m` tag:
 git branch -m <old-branch-name> <new-branch-name>
 ~~~
 {: .language-bash}
+
+>## Exercise 1: Create a feature branch
+> You will be assigned a number by the instructor/helper. 
+> Create a feature branch based on upstream main. Then create a file in the `trainees` folder called `hello_NNN.txt` using the number you just got (replace NNN with your number, e.g. 007).
+> Then push your featurebranch out to GitHub.
+>
+> > ## Solution
+> > ~~~
+> > git fetch upstream main
+> > git checkout -b myforkfeature upstream/main
+> > touch ./triainees/hello_NNN.txt
+> > git add ./triainees/hello_NNN.txt
+> > git commit -m "adding my textfile"
+> > git push origin myforkfeature
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}

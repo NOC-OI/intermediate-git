@@ -37,7 +37,7 @@ $ ls
 {: .language-bash}
 We see a small number of files; let's have a look inside `plot_bouys.py`.
 ~~~
-$ nano plot.py
+$ nano plot_buoys.py
 ~~~
 {: .language-bash}
 Let's try to run the code
@@ -59,7 +59,7 @@ $ git checkout 2890
 {: .language-bash}
 And see if the `plot_buoys.py` script runs here.
 ~~~
-$ python `plot_buoys.py`
+$ python plot_buoys.py
 ~~~
 {: .language-bash}
 
@@ -80,7 +80,7 @@ $ git blame plot_buoys.py
 We see that most lines were created in the same two commits, but some were modified in other commits. There are a lot of lines here,
 let's focus on the range of lines 57 to 61 (the part not in a function)
 ~~~
-$ git blame -L 57,61 plot.py
+$ git blame -L 57,61 plot_buoys.py
 ~~~
 {: .language-bash}
 That's better. Let's take a closer look at the commit on line 61.
@@ -93,7 +93,7 @@ altered the function name. Let's try going back a bit in the history with `git c
 
 ~~~
 $ git checkout HEAD~1
-$ git blame -L 57,61 plot.py
+$ git blame -L 57,61 plot_buoys.py
 ~~~
 {: .language-bash}
 
@@ -101,27 +101,37 @@ This still hasn't found the commit which renamed the function, let's try going b
 
 ~~~
 $ git checkout HEAD~1
-$ git blame -L 57,61 plot.py
+$ git blame -L 57,61 plot_buoys.py
 ~~~
 
 We can see that the problematic line was brought in during commit `eecf`.
 Multiple commits after something breaks can make `git blame` a little harder to use.
 
 > ## Challenge: Using git blame across files
-> We can ask `git blame` to attempt to track movement between files
-> ~~~
-> $ git blame -C -L 30,50 hello.sh
-> ~~~
-> {: .language-bash}
-> `git blame` is a very useful tool if you know the line that causes the
-> issues in the first place, but you want to look at the commit message
-> of that generated the line to check where it came from. Now we can see
-> the lines were actually introduced in another commit, let's take a
-> look at that commit now
-> ~~~
-> $ git show 8f67
-> ~~~
-> {: .language-bash}
+> We can ask `git blame` to attempt to track changes across files. For example where
+> code is copied and pasted from one file to another or where files are renamed using `git mv`.
+> We can do this by specifying the `-C` option to `git blame`.
+> Use `git blame -C` to identify which lines of `plot_buoys.py` came from another file. Then 
+> use `git show` or `git checkout` to examine the contents of this file.
+>
+>> ## Solution
+>> ~~~
+>> $ git blame -C plot_buoys.py
+>> ~~~
+>> {: .language-bash}
+>> This came from description.txt in commit `73592708`. We can examine this commit with:
+>> ~~~
+>> $ git show 7359
+>> ~~~
+>> {: .language-bash}
+>> or
+>> ~~~
+>> $ git checkout 7359
+>> $ cat description.txt
+>> $ git checkout broken #get back to the head of the branch
+>> ~~~
+>> {: .language-bash}
+> {: .solution}
 {: .challenge}
 
 

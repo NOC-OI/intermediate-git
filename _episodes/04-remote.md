@@ -40,7 +40,7 @@ git remote
 ~~~
 {: .language-bash}
 
-If you test this in our training repository, you should get only one connection, `origin`:
+If you test this in the local repo you've created, you should get only one connection, `origin`:
 ~~~
 origin
 ~~~
@@ -58,12 +58,12 @@ git remote -v
 For our training repository this should return:
 
 ~~~
-origin	https://github.com/user_name/advanced-git-training.git (fetch)
-origin	https://github.com/user_name/advanced-git-training.git (push)
+origin	git@github.com:<user-name>/intermediate-git-test-repo.git (fetch)
+origin	git@github.com:<user-name>/intermediate-git-test-repo.git (push)
 ~~~
 {: .output}
 
-As expected these point to the original repository we cloned.
+As expected these point to the repository you cloned.
 
 ## Create and Modify Connections
 
@@ -96,12 +96,16 @@ git show <name>
 ~~~
 {: .language-bash}
 
-Exercise: Add a connection to your neighbour's repository. Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.
-
-~~~
-git remote add john http://dev.example.com/john.git
-~~~
-{: .language-bash}
+>## Exercise 1: Add a connection to your neighbour's repository. 
+> Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.
+>
+> > ## Solution
+> > ~~~
+> > git remote add john http://dev.example.com/john.git
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
 
 
 ## Starting a branch from the main repository state:
@@ -110,7 +114,8 @@ Remember that when you create a new branch without specifying a starting point, 
 
 ~~~
 git fetch origin main
-git checkout -b <branch> origin/main
+git branch <branch> origin/main
+git switch <branch>
 ~~~
 {: .language-bash}
 
@@ -120,22 +125,28 @@ If there is another "true" version/state of the project, then this connection ma
 
 ~~~
 git fetch upstream main
-git checkout -b <branch> upstream/main
+git branch <branch> upstream/main
+git switch <branch>
 ~~~
 {: .language-bash}
 
-Now we can set the MPIA version of our repository as the upstream for our local copy.
+Now we can set the NOC-OI version of our repository as the upstream for our local copy.
 
-Exercies: set the https://github.com/mpi-astronomy/advanced-git-training as the upstream locally.
-
-~~~
-git remote add upstream https://github.com/mpi-astronomy/advanced-git-training.git
-git fetch upstream
-git checkout -b develop upstream/develop
-~~~
-{: .language-bash}
-
-Now examine the state of your repository with `git branch`, `git remote -v`, `git remote show upstream`
+>## Exercise 2: Set upstream. 
+> Set the https://github.com/NOC-OI/intermediate-git-test-repo  repo as the upstream locally.
+>
+> > ## Solution
+> > ~~~
+> > git remote add upstream git@github.com:NOC-OI/intermediate-git-test-repo.git
+> > git fetch upstream
+> > git branch develop upstream/develop
+> > git switch develop
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
+>
+> Now examine the state of your repository with `git branch`, `git remote -v`, `git remote show upstream`
 
 
 

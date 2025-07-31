@@ -123,13 +123,14 @@ git branch -m <old-branch-name> <new-branch-name>
 > > ## Solution
 > > ~~~
 > > git branch featue-branch
+> > git switch featue-branch
 > > ~~~
 > > {: .language-bash}
 > > Make some edit to `plot_buoys.py`.
 > > ~~~
 > > git add plot_buoys.py
 > > git commit -m "Change colour of buoy marker"
-> > git push origin main
+> > git push origin feature-branch
 > > ~~~
 > > {: .language-bash}
 > {: .solution}

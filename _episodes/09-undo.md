@@ -1,7 +1,7 @@
 ---
 title: "Undoing Changes"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 30
 questions:
 - "I've just made a mistake, how can I undo it?"
 objectives:
@@ -12,18 +12,18 @@ objectives:
 - "Understand HEAD and the latest commit"
 - "Be able to move to historical states of the repository"
 keypoints:
-- "`git reset` rolls back the commits and leaves the changes in the files"
-- "`git reset --hard` roll back and delete all changes"
-- "`git reset` does alter the history of the project."
-- "You should use `git reset` to undo local changes that have not been pushed to a remote repository."
 - "`git revert` undoes a commit by creating a new commit."
 - "`git revert` should be used to undo changes on a public branch or changes that have already been pushed remotely."
 - "`git revert` only backs out a single commit or a range of commits."
-- "Learnt to change the state of the index, working tree using git reset"
-- "Learnt to change the commit which this branch points to with git reset"
-- "Learnt to selectively pick up historical versions of files with git checkout"
-- "Understand HEAD, master and the latest commit"
-
+- "`git reset` rolls back the commits and leaves the changes in the files"
+- "`git reset --hard` roll back and delete all changes"
+- "`git reset` alters the history of the project."
+- "You should use `git reset` to undo local changes that have not been pushed to a remote repository."
+- "`git restore` can restore a file in the working directory to it's state from the repository.
+- "`git restore --staged` can remove a file from the staging area but leaves it in the working directory."
+- "`git restore` is a newer command and `git reset` can be used to do many of the same operations, but `git restore` has a simpler syntax."
+- "`git checkout <commit ID>` can be used to move the repository back to an earlier commit."
+- "`git checkout <commit ID> -- <filename>` can restore an individual file from an earlier commit"
 ---
 
 ## Setup a repository for the episode
@@ -54,6 +54,7 @@ Before we can proceed we need to create a branch with some commits that we will 
 > {: .solution}
 {: .challenge}
 
+## Amending a Git Commit message
 
 ## Git Revert
 

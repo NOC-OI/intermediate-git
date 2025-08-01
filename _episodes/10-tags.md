@@ -1,6 +1,6 @@
 ---
 title: "Tags"
-teaching: 0
+teaching: 10
 exercises: 0
 questions:
 - "How can I flag a specific state of the project?"

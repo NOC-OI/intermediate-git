@@ -67,7 +67,7 @@ Tracking "report.pdf"
 {: .output}
 
 Having done so, we can inspect the repository and we learn that a new file `.gitattributes`
-was added to the repository. 
+was added to the repository.
 
 ~~~
 git status
@@ -121,7 +121,7 @@ git push origin main
 {: .language-bash}
 
 ~~~
-Uploading LFS objects: 100% (1/1), 17 B | 0 B/s, done.                          
+Uploading LFS objects: 100% (1/1), 17 B | 0 B/s, done.
 ~~~
 {: .output}
 
@@ -158,19 +158,19 @@ Uploading LFS objects: 100% (1/1), 17 B | 0 B/s, done.
 {: .caution}
 
 > ## Challenge: Add your images into Git LFS
-> When the `plot_buoys.py` script is run it produces a PNG file (`plot_buoys.png`).
-> 
+> When the `plot_buoys.py` script is run it produces a PNG file (`buoys_plot.png`).
+>
 > Try and do the following:
-> 1. Add all PNG files to Git LFS. 
+> 1. Add all PNG files to Git LFS.
 > 2. Commit the updated .gitattributes file.
-> 3. Add, commit and push `plot_buoys.png` to your Github repository.
+> 3. Add, commit and push `buoys_plot.png` to your Github repository.
 > 4. Find the file in Github's web interface. Can you confirm if it has used LFS?
-> 
+>
 >> ## Solution
 >> ~~~
 >> git lfs track "*.png"
 >> git commit .gitattributes -m "using Git LFS for PNG files"
->> git add plot_buoys.png
+>> git add buoys_plot.png
 >> git commit -m "adding example output image"
 >> git push
 >> ~~~

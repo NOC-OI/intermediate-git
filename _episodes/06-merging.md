@@ -36,9 +36,15 @@ Now, in our PR, we have an extra commit called 'Merge branch main into feature-b
 
 ### Squashing
 
-One other thing to briefly cover while we are talking about PRs is squashing. 
+One other thing to briefly cover while we are talking about PRs is squashing. Squashing allows you to combine multiple commits into just one commit. This makes the history of your repository much simpler and easier to follow, but you are also losing information by doing this and make it harder to track down bugs (among other pros and cons!). Some teams will have development workflows that involve squashing and others won't, as we discussed last lesson, it's important to talk to your collaborators about it. 
+
+We aren't going to cover squashing in much detail here, other than how you can squash all of the commits in a branch at the point of merging the branch into `main` as a PR. 
+
+There is a branch of the upstream repo called `multiple-commits`. If we make a PR for that branch into main, we see that the 'Merge pull request' button has a little drop down arrow and one option is 'Squah and merge'. If we select this, then all three of the commits on this branch are squashed when we merge. 
 
 ## git merge
+
+So far we've talked about merging via the web broswer as part of a PR, but there will be other times you want to merge and it's very useful to be able to do this from the command line as well. 
 
 When you are collaborating, you will have to merge a branch independent if your branch may or may not have diverged from the main branch. Most of the Git hosting platform like GiHub or GitLab allows you to merge a branch from their web interface but you can also merge the branches from your machine using `git merge`.
 

@@ -45,25 +45,25 @@ A BRANCHING MODEL AIMS TO:
 
 ## Git Branching Models
 
-Some version control systems are Very Opinionated about the branching models that can be used. `git` is very much (fortunately or unfortunately) not. This means that there are many different ways to do development in a team and the team needs to explicitly agree on how and when to merge contributions to the main branch. So the first rule of `git` granching is: "Talk about your branching model." The second rule is: "Talk about your branching model." If in doubt, do what other people around you are doing. If they don't do anything, call a friend.
+Some version control systems are Very Opinionated about the branching models that can be used. `git` is very much (fortunately or unfortunately) not. This means that there are many different ways to do development in a team and the team needs to explicitly agree on how and when to merge contributions to the main branch. So the first rule of `git` branching is: "Talk about your branching model." The second rule is: "Talk about your branching model." If in doubt, do what other people around you are doing. If they don't do anything, call a friend.
 
 That said, there are a number of established (and less so) branching models that are used with `git`. These include, but are not limited to:
 
 - **Centralized workflow**: enables all team members to make changes directly to the main branch. Every change is logged into the history. In this workflow, the contributors do not use other branches. Instead they all make changes on the main branch directly and commit to it. This works for individual developers or small teams which communicate very well, but can be tricky for larger teams: the code is in constant state of flux and developers keep changes local until they are ready to release.
 
 - **Trunk-based development**: is somewhat similar to the centralized workflow. The development happens on a single branch called `trunk`. When changes need to be merged, each developer pulls and rebases from the trunk branch and resolves conflicts locally. This can work if small merges are made frequently and is more successful if there is CI/CD.
-  
+
 - **Feature branch workflow**: every small change or "feature" gets its own branch where the developers make changes. Once the feature is done, they submit a merge/pull request and merge it into the main branch. Features branches should be relatively short-lived. The benefit of this model is that the main branch is not poluted by unfinished features. Good for teams.
-  
+
 - **Gitflow**: is a model where the main development happens in a develop branch with feature branches. When the develop branch is ready for a release (or to go into production), a team member creates a release branch which is tested and eventually merged onto the dev and eventually main branch.
-  
+
 - **GitHub flow**: similar to the branching workflow. ([Further info](https://docs.github.com/en/get-started/quickstart/github-flow))
-  
+
 - **GitLab flow**: is a simplified version of Gitflow. ([Further info](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/))
 
 - **Oneflow**: is similar to Gitflow but relies on the maintanance of one long-lived branch. It is meant to be simpler, without a develop branch but feature branches still exist.  ([Further info](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow))
-  
-- **Forking workflow** (e.g. astropy): is a model where each contributor creates a `fork` or a complete copy of the repository. Every contributor effectively has two repositories: his own and the main (upstream) one. Changes are made as pull requests against the main repository. This model is popular with open source projects because the vast majority of contributors do not need to have priviledges in the main repository. 
+
+- **Forking workflow** (e.g. astropy): is a model where each contributor creates a `fork` or a complete copy of the repository. Every contributor effectively has two repositories: his own and the main (upstream) one. Changes are made as pull requests against the main repository. This model is popular with open source projects because the vast majority of contributors do not need to have priviledges in the main repository.
 
 A longer description of some of these can be found [here](https://about.gitlab.com/topics/version-control/what-is-git-workflow/#feature-branching-git-workflow).
 
@@ -96,7 +96,7 @@ So, working on a separate branch for each feature you are adding is good for sev
 - if you decide that the feature is not working or is no longer needed -
   you can easily and safely discard that branch without affecting the rest of the code.
 
-### Gitflow Workflow 
+### Gitflow Workflow
 
 In the Gitflow workflow,
 we typically have a main branch which is the version of the code that is
@@ -129,37 +129,37 @@ Adapted from <a href="https://sillevl.gitbooks.io/git/content/collaboration/work
 
 ### Forking Workflow
 
-The forking workflow is popular among open source software projects and often used in conjunction with a branching model. 
+The forking workflow is popular among open source software projects and often used in conjunction with a branching model.
 
 The focus of this workflow is to keep the "upstream main" stable while allowing anyone to work on their own contributions independently. Contributions are then suggested and accepted via pull requests. There is not necessarily a develop branch, but you may have release branches.
 
 ![GitFlow 1](../fig/27-forking-1-Copy.png)
 <p style="text-align: center;">Source: GitHub<br></p>
 
-In order to understand the forking workflow, let's first take a look at some special words and roles needed (we've already talked about some of these today!): 
+In order to understand the forking workflow, let's first take a look at some special words and roles needed (we've already talked about some of these today!):
 
-*upstream* - Remote repository containing the "true copy"
+- ***upstream*** - Remote repository containing the "true copy"
 
-*origin* - Remote repository containing the forked copy
+- ***origin*** - Remote repository containing the forked copy
 
-Pull request(PR) - Merge request from fork to upstream (a request to add your suggestions to the "original copy")
+- **Pull request (PR)** - Merge request from fork to upstream (a request to add your suggestions to the "original copy")
 
-Maintainer - Someone with write access to upstream who vets PRs
+- **Maintainer** - Someone with write access to upstream who vets PRs
 
-Contributor - Someone who contributes to upstream via PRs
+- **Contributor** - Someone who contributes to upstream via PRs
 
-Release manager - A maintainer who also oversees releases
+- **Release manager** - A maintainer who also oversees releases
 
 Here is some info about workflows used in a couple of projects as real life examples:
 
-[Example release workflow for the astropy Python package](https://docs.astropy.org/en/latest/development/maintainers/releasing.html)
+- [Example release workflow for the astropy Python package](https://docs.astropy.org/en/latest/development/maintainers/releasing.html)
 
-[Spacetelescope (STScI) style guide for release workflow](https://github.com/spacetelescope/style-guides/blob/master/guides/release-workflow.md)
+- [Spacetelescope (STScI) style guide for release workflow](https://github.com/spacetelescope/style-guides/blob/master/guides/release-workflow.md)
 
 
 >## Exercise 1: Suggest your changes via pull request
-> Earlier in this workshop, you pushed a feature branch up to `origin` in which you had made a small change to `plot_buoys.py`. 
-> Go to your repository (your fork) on GitHub and find the tab called "Pull requests". Click the green "new pull request" button. Then find and click the blue link uder "Compare changes" called "compare across fork". Select your username and branch name from the right menus. Then click the big green button under the menus called "create pull request".
+> Earlier in this workshop, you pushed a feature branch up to `origin` in which you had made a small change to `plot_buoys.py`.
+> Go to your repository (your fork) on GitHub and find the tab called "Pull requests". Click the green "new pull request" button. Then find and click the blue link uder "Compare changes" called "compare across fork". Select your username and branch name from the right menus. Then click the big green button under the menus called "Create pull request".
 {: .challenge}
 
 

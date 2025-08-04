@@ -13,7 +13,7 @@ keypoints:
 
 ## Merging a PR
 
-Let's use one of the PRs from the last exercise as an example. We can merge this PR via Github by clicking on the 'Merge pull request' button. You'll notice that Github automatically checks whether there are any conflicts and has told us that there are not.
+Let's use one of the PRs from the last exercise as an example. We can merge this PR via Github by clicking on the 'Merge pull request' button. You'll notice that Github automatically checks whether there are any conflicts and has told us that there are not. 
 
 Now, let's purposefully set up a conflict, to see what that looks like when dealing with a PR on Github. To do this, I'm going to change the colour of the buoy marker in `main` directly (which we've just told you is bad practice!).
 
@@ -30,7 +30,9 @@ Via the web browser, we are being shown something that looks like:
 ~~~
 {: .language-python}
 
-Here, either side of the `=======`, we have the line of code that is in conflict and we are told that the line above is coming from `feature-branch` whereas the line below is coming from `main`. We can simply delete one of these lines, and all of the extra symbols that have been added in. We can then click 'Mark as resolved' and then we need to commit the merge.
+Here, either side of the `=======`, we have the line of code that is in conflict and we are told that the line above is coming from `feature-branch` whereas the line below is coming from `main`. The content above the `=======` is usually from the branch being merged into and after is from the branch being merged.
+
+We can simply delete one of these lines, and all of the extra symbols that have been added in. We can then click 'Mark as resolved' and then we need to commit the merge.
 
 Now, in our PR, we have an extra commit called 'Merge branch main into feature-branch' and we no longer have any conflicts.
 
@@ -70,7 +72,7 @@ Make some small change on branch-to-merge.
 
 ~~~
 git add plot_buoys.py
-git commit -m"Some small commit"
+git commit -m "Some small commit"
 ~~~
 {: .language-bash}
 
@@ -80,7 +82,7 @@ Merges branch by creating a merge commit. Prompts for merge commit message. Idea
 
 ~~~
 git switch main
-git merge --no-ff <branch> -m "Message"
+git merge --no-ff branch-to-merge -m "Message"
 git log -3
 ~~~
 {: .language-bash}
@@ -122,16 +124,30 @@ If there are no conflicts with the main branch, a "fast-forward" merge can be ex
 This is ideal for updating a branch from remote.
 
 ~~~
-git checkout main
-git merge --ff-only <branch>
+git switch main
+git pull
+git branch branch-to-ff-merge
+git switch branch-to-ff-merge
 ~~~
 {: .language-bash}
+
+Make some small change on branch-to-ff-merge.
+
+~~~
+git add plot_buoys.py
+git commit -m "Some small commit"
+git switch main
+git merge --ff-only branch-to-ff-merge
+git log -3
+~~~
+{: .language-bash}
+
 
 If using the fast-forward merge, it is impossible to see from the `git` history which of the commit objects together have implemented a feature. You would have to manually read all the log messages. Reverting a whole feature (i.e. a group of commits), is a true headache in the latter situation, whereas it is easily done if the --no-ff flag was used.
 
 For a good illustration of fast-forward merge (and other concepts), see this [thread](https://stackoverflow.com/questions/9069061/what-effect-does-the-no-ff-flag-have-for-git-merge).
 
->## Exercise: Creating a fast-forwad merge.
+>## Exercise: Creating a fast-forward merge.
 >
 > Consider the following Git tree
 >
@@ -151,8 +167,10 @@ For a good illustration of fast-forward merge (and other concepts), see this [th
 
 ### Three-way Merge
 
-Similar to `--no-ff`, but there may be dragons. Forced upon you when there’s an intermediate change since you branched.
-May prompt you to manually resolve
+This is similar to `--no-ff`, but there may be dragons. Forced upon you when there’s an intermediate change since you branched - if you branch to work on a piece of code and in the meantime, that piece of code is changed on `main`, when you want to merge your branch back to main, you will end up three-way merging.
+You may well be prompted you to manually resolve conflicts (as we saw in the example at the start of this episode).
+
+The 'three' in three way merging comes from the three versions of the code to consider: the branch you are merging, the branch you are merging into and the common ancestor of the branches.
 
 ~~~
 git merge <branch> [-s <strategy>]
@@ -172,5 +190,46 @@ See [here](https://git-scm.com/docs/merge-strategies) and [here](https://nvie.co
 
 
 Note: there are a number of external tools that have a graphical interface to allow for merge conflict resolution. Some of these include: kdiff3 (Windows, Mac, Linux), Meld (Windows, Linux), P4Merge (Windows, Mac, Linux),  opendiff (Mac), vimdiff (for Vim users), Beyond Compare, GitHub web interface. We do not endorse any of them and use at your own risk. In any case, using a graphical interface does not substitute for understanding what is happening under the hood.
+
+Honestly, everyone probably ends up with their own way of resolving conflicts that is slightly different to everyone else's. So let's have a short example to have a bit of practice:
+
+>## Exercise: Conflict resolution.
+>
+> Create a new branch and rename the `plot_buoy_data` function (in both locations!). Add a comment to the where the function is called from, as well. Commit these changes. Then, merge in the branch upstream/rename and resolve any conflicts. 
+>
+> ~~~
+> *   69fac81 (main) Merge branch 'gitignore'
+> |\
+> | * 5537012 (gitignore) Add .gitignore
+> |/
+> * 6ec7c0f Add README
+> ~~~
+>
+> > ## Solution
+> > ~~~
+> > git pull origin
+> > git branch merge-conflict
+> > git switch merge-conflict
+> > ~~~
+> > {: .language-bash}
+> >
+> > Make changes to `plot_buoys.py`.
+> >
+> > ~~~
+> > git add plot_buoys.py
+> > git commit -m "Some small commit"
+> > git merge upstream/rename
+> > ~~~
+> > {: .language-bash}
+> >
+> > Resolve conflicts!
+> >
+> > ~~~
+> > git add plot_buoys.py
+> > git commit -m "Resolve conflicts"
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}

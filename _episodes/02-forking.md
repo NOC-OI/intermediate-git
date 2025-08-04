@@ -30,6 +30,21 @@ git clone git@github.com:<user-name>/intermediate-git-test-repo.git
 > Follow the above instructions to create a fork of the intermediate-git-test-repo and a local copy of it.
 {: .challenge}
 
+>## Exercise 2: Download data and ensure code runs
+> To run this code we also need some data files. You can download these from [https://noc-oi.github.io/python-intermediate-esces/data/data.zip](https://noc-oi.github.io/python-intermediate-esces/data/data.zip).
+> Create a sub directory called `data` in your code repository and extract the zip file into that directory.
+>
+>> ## Solution
+>> ~~~
+>> curl -O https://noc-oi.github.io/python-intermediate-esces/data/data.zip
+>> mkdir data
+>> cd data
+>> unzip ../data.zip
+>> ~~~
+>> {: .language-bash}
+> {: .solution}
+{: .challenge}
+
 We'll discuss forking further in the Remotes and Branching Models chapters.
 
 {% include links.md %}

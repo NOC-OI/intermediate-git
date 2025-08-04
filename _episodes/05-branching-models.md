@@ -159,7 +159,7 @@ Here is some info about workflows used in a couple of projects as real life exam
 
 >## Exercise 1: Suggest your changes via pull request
 > Earlier in this workshop, you pushed a feature branch up to `origin` in which you had made a small change to `plot_buoys.py`.
-> Go to your repository (your fork) on GitHub and find the tab called "Pull requests". Click the green "new pull request" button. Then find and click the blue link uder "Compare changes" called "compare across fork". Select your username and branch name from the right menus. Then click the big green button under the menus called "create pull request".
+> Go to your repository (your fork) on GitHub and find the tab called "Pull requests". Click the green "new pull request" button. Then find and click the blue link uder "Compare changes" called "compare across fork". Select your username and branch name from the right menus. Then click the big green button under the menus called "Create pull request".
 {: .challenge}
 
 

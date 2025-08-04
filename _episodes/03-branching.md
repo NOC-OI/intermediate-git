@@ -56,11 +56,6 @@ git branch
 ~~~
 {: .language-bash}
 
-~~~
-git branch -avv
-~~~
-{: .language-bash}
-
 To create a new branch named `<branch>`, which *references the same point in history as the current branch.*
 ~~~
 git branch <branch>

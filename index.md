@@ -10,7 +10,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 
 > ## Prerequisites
 >
-> FIXME
+> Some beginner level experience with Git, such as having completed the [Introduction to Version Control with Git](https://noc-oi.github.io/git-novice/) course and spent a few months putting that into practice.
 {: .prereq}
 
 {% include links.md %}

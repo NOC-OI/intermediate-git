@@ -32,7 +32,7 @@ git clone git@github.com:<user-name>/intermediate-git-test-repo.git
 
 >## Exercise 2: Download data and ensure code runs
 > To run this code we also need some data files. You can download these from [https://noc-oi.github.io/python-intermediate-esces/data/data.zip](https://noc-oi.github.io/python-intermediate-esces/data/data.zip).
-> Create a sub directory called `data` in your code repository and extract the zip file into that directory.
+> Create a sub directory called `data` in your code repository and extract the zip file into that directory. Ensure the code runs by running it with Python.
 >
 >> ## Solution
 >> ~~~
@@ -40,6 +40,8 @@ git clone git@github.com:<user-name>/intermediate-git-test-repo.git
 >> mkdir data
 >> cd data
 >> unzip ../data.zip
+>> cd ..
+>> python plot_buoys.py
 >> ~~~
 >> {: .language-bash}
 > {: .solution}

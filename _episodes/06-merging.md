@@ -1,7 +1,7 @@
 ---
 title: "Merging"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 20
 questions:
 - "How do I merge a branch changes?"
 objectives:
@@ -46,22 +46,31 @@ There is a branch of the upstream repo called `multiple-commits`. If we make a P
 
 So far we've talked about merging via the web broswer as part of a PR, but there will be other times you want to merge and it's very useful to be able to do this from the command line as well. 
 
-When you are collaborating, you will have to merge a branch independent if your branch may or may not have diverged from the main branch. Most of the Git hosting platform like GiHub or GitLab allows you to merge a branch from their web interface but you can also merge the branches from your machine using `git merge`.
+When you are collaborating, you will have to merge a branch independently if your branch may or may not have diverged from the main branch. Most of the Git hosting platform like GiHub or GitLab allows you to merge a branch from their web interface but you can also merge the branches from your machine using `git merge`.
 
 There are 2 ways to merge:
 
-- non-fast-forward merged (recommended)
+- non-fast-forward merge (recommended)
 
-- fast forward merged
+- fast forward merge
 
 ![Merging diagram.](../fig/09-merging.png)
 
-Reminder: when starting work on a new feature, be careful where you branch from!
+Reminder: when starting work on a new feature, be careful where you branch from! (And make sure that everything is up to date with the remote.)
 
 ~~~
-git remote add upstream https://github.com/mpi-astronomy/advanced-git-training.git
-git fetch upstream
-git checkout -b develop upstream/develop
+git switch main
+git pull
+git branch branch-to-merge
+git switch branch-to-merge
+~~~
+{: .language-bash}
+
+Make some small change on branch-to-merge.
+
+~~~
+git add plot_buoys.py
+git commit -m"Some small commit"
 ~~~
 {: .language-bash}
 
@@ -70,8 +79,9 @@ git checkout -b develop upstream/develop
 Merges branch by creating a merge commit. Prompts for merge commit message. Ideal for merging two branches.
 
 ~~~
-git checkout main
+git switch main
 git merge --no-ff <branch> -m "Message"
+git log -3
 ~~~
 {: .language-bash}
 
@@ -79,7 +89,7 @@ The `--no-ff` flag causes the merge to always create a new commit object, even i
 
 >## Exercise: Creating a non-fast-forward merge.
 >
-> Create a new Git repository that has the following tree.
+> In another directory, create a new Git repository that has the following tree.
 >
 > ~~~
 > *   69fac81 (main) Merge branch 'gitignore'
@@ -108,8 +118,8 @@ The `--no-ff` flag causes the merge to always create a new commit object, even i
 
 ## Fast-forward Merge
 
-If there are no conflicts with the main branch, a "fast-forward" merge can be executed with. This will NOT create a merge commit! Aborts merge if it cannot be done.
-Ideal for updating a branch from remote.
+If there are no conflicts with the main branch, a "fast-forward" merge can be executed with `--ff-only`. This will NOT create a merge commit! This aborts the merge if it cannot be done.
+This is ideal for updating a branch from remote.
 
 ~~~
 git checkout main
@@ -142,7 +152,7 @@ For a good illustration of fast-forward merge (and other concepts), see this [th
 ### Three-way Merge
 
 Similar to `--no-ff`, but there may be dragons. Forced upon you when there’s an intermediate change since you branched.
-May prompt your to manually resolve
+May prompt you to manually resolve
 
 ~~~
 git merge <branch> [-s <strategy>]

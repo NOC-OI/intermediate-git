@@ -1,7 +1,7 @@
 ---
 title: "Remote Repositories"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 20
 questions:
 - "How can I work in remote teams and with remotely hosted code?"
 objectives:

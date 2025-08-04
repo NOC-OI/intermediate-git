@@ -1,7 +1,7 @@
 ---
 title: "Branches"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 10
 questions:
 - "What are branches?"
 - "How do I view the current branches?"

@@ -12,9 +12,7 @@ keypoints:
 - "Other git commands (`git fetch`, `git push`, `git pull`) use these bookmarks to carry out their syncing responsibilities."
 ---
 
-https://www.atlassian.com/git/tutorials/syncing
-
-Git's distributed collaboration model, which gives every developer their own copy of the repository, complete with its own local history and branch structure. Users typically need to share a series of commits rather than a single "changeset". Instead of committing a "changeset" from a working copy to the central repository, Git lets you share entire branches between repositories.
+Git's distributed collaboration model, which gives every developer their own copy of the repository, complete with its own local history and branch structure. Users typically need to share a series of commits rather than a single "changeset". Instead of committing a "changeset" from a working copy to the central repository, Git lets you share entire branches between repositories ([REFERENCE](https://www.atlassian.com/git/tutorials/syncing)).
 
 ## Git remote
 
@@ -96,7 +94,7 @@ git show <name>
 ~~~
 {: .language-bash}
 
->## Exercise 1: Add and delete a connection to your neighbour's repository. 
+>## Exercise 1: Add and delete a connection to your neighbour's repository.
 > Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.
 >
 > > ## Solution
@@ -135,7 +133,7 @@ git switch <branch>
 
 Now we can set the NOC-OI version of our repository as the upstream for our local copy.
 
->## Exercise 2: Setting upstream and checking out remote branches. 
+>## Exercise 2: Setting upstream and checking out remote branches.
 > Set the https://github.com/NOC-OI/intermediate-git-test-repo  repo as the upstream locally.
 > Then check which branches exist upstream and create a local branch with the starting point of the upstream branch called `develop`.
 >
@@ -167,12 +165,12 @@ Things get a little bit confusing here because one of our remotes, by convention
 
 We can also examine our upstream branches some arguments to the `git branch` command. `-a` will show you local and remote branches and `-vv` will show the relationship to upstream branches.
 
->## Exercise 3: Upstream branches. 
+>## Exercise 3: Upstream branches.
 > Try using the above arguments to `git branch`.
 >
 > > ## Solution
 > > ~~~
-> > $ git branch -vva 
+> > $ git branch -vva
 > > ~~~
 > >{: .language-bash}
 > {: .solution}
@@ -182,13 +180,13 @@ If we wanted to switch the default remote for this branch, we could use `git bra
 
 The develop branch we checked out from the upstream remote branch a small commit which is not in your `origin` remote.
 
->## Exercise 4: Pushing to origin. 
+>## Exercise 4: Pushing to origin.
 > Push these changes we've pulled down to own remote
 repository (`origin`).
 >
 > > ## Solution
 > > ~~~
-> > $ git push origin develop 
+> > $ git push origin develop
 > > ~~~
 > >{: .language-bash}
 > > Regardless of what is set as the upstream branch, you can always be explicit about the remote and branch name. There are many ways you could format this command, see the [git push documentation](https://git-scm.com/docs/git-push) for options.
@@ -197,11 +195,11 @@ repository (`origin`).
 
 ## Having Github and Gitlab Remotes
 
-You might want to have remote copies of your repository on both Github and Gitlab. For example, you might have developed code on NOC's Gitlab, in a private repository, but now you want a copy on Github, which will be open to the public. 
+You might want to have remote copies of your repository on both Github and Gitlab. For example, you might have developed code on NOC's Gitlab, in a private repository, but now you want a copy on Github, which will be open to the public.
 
-We will actually demo this in reverse, seeing as our test repo is already set up on Github. Therefore, let's create a blank project in Gitlab, add a new remote to our local repo and push the main branch to Gitlab. 
+We will actually demo this in reverse, seeing as our test repo is already set up on Github. Therefore, let's create a blank project in Gitlab, add a new remote to our local repo and push the main branch to Gitlab.
 
->## Exercise 4: Set up a Gitlab remote. 
+>## Exercise 4: Set up a Gitlab remote.
 > Try to set up a remote in Gitlab, as discussed in the paragraph above.
 {: .challenge}
 

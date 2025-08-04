@@ -22,9 +22,7 @@ Branching is a feature available in most modern version control systems. Branchi
 
 The diagram above visualizes a repository with two isolated lines of development, one for a little feature, and one for a longer-running feature. By developing them in branches, it’s not only possible to work on both of them in parallel, but it also keeps the main branch free from questionable code.
 
-The implementation behind Git branches is much more lightweight than other version control system models. Instead of copying files from directory to directory, Git stores a branch as a reference to a commit. In this sense, a branch represents the tip of a series of commits—it's not a container for commits. The history for a branch is extrapolated through the commit relationships.
-
-(https://www.atlassian.com/git/tutorials/using-branches)
+The implementation behind Git branches is much more lightweight than other version control system models. Instead of copying files from directory to directory, Git stores a branch as a reference to a commit. In this sense, a branch represents the tip of a series of commits—it's not a container for commits. The history for a branch is extrapolated through the commit relationships ([REFERENCE](https://www.atlassian.com/git/tutorials/using-branches)).
 
 ## What is a branch?
 
@@ -144,5 +142,17 @@ git branch -m <old-branch-name> <new-branch-name>
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
+
+
+> ## git checkout
+> Sometimes, instead of using git switch, you may see the command `git checkout <branch>` (or `git checkout -b <branch>` to create and switch to a new branch). This command was used in earlier versions of Git to switch branches or restore files.
+>This command is still available, but it is recommended to use `git switch` for switching branches and `git restore` for restoring files. The `git checkout` command has been split into these two commands to make it clearer what you are trying to do.
+{: .callout}
+
+> ## git log
+> If you want to see the history of commits in a branch, you can use the `git log` command. This will show you all the commits in the current branch, along with their commit messages and other details.
+{: .callout}
+
+
 
 {% include links.md %}

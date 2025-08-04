@@ -1,7 +1,7 @@
 ---
 title: "Publishing and Citing Code"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 20
 questions:
 - "How do I ensure my code is citable?"
 objectives:
@@ -10,7 +10,8 @@ keypoints:
 
 ---
 
-## Adding an Open Source License to your code
+
+## Open Source Licensing
 
 Copyright allows a creator of work (such as written text, photographs, films, music, software code) to state that 
 they own the work they have created. Copyright is automatically implied - even if the creator does not explicitly 
@@ -80,8 +81,6 @@ repository creation process.
 > Add a comment to the top of `plot_bouys.py` stating which license you have chosen and where to find the text of it.
 {: .challenge}
 
-## Sharing code to encourage collaboration
-
 ### Making the code public
 
 By default repositories created on GitHub are private and only their creator can see them. 
@@ -107,6 +106,100 @@ permissions then we can transfer a repository from our personal namespace to the
 This can be done with another option in the "Danger Zone" settings, the
 "Transfer ownership" button. 
 Pressing this will then prompt us as to which organisation we want to transfer the repository to. 
+
+## Citing Code
+
+### CITATION file
+
+We should add a citation file to our repository to provide instructions on how to cite our code. 
+A citation file can be a plain text (CITATION.txt) or a Markdown file (CITATION.md), but there are certain benefits 
+to using use a special file format called the [Citation File Format (CFF)](https://citation-file-format.github.io/), 
+which provides a way to include richer metadata about code (or datasets) we want to cite, making it easy for both 
+humans and machines to use this information.
+
+#### Why use CFF?
+
+For developers, using a CFF file can help to automate the process of publishing
+new releases on [Zenodo](https://zenodo.org) via GitHub. 
+GitHub also "understands" CFF, and will display citation information prominently on the landing page 
+of a repository that contains citation info in CFF.
+
+For users, having a CFF file makes it easy to cite the software or dataset 
+with formatted citation information available for copy+paste and direct import from GitHub into reference managers like 
+Zotero.
+
+#### CFF file format
+
+A CFF file is using the [YAML](https://yaml.org/) key-value pair format.
+At a minimum a CFF file must contain the title of the software/data, the type of asset (software or data)
+and at least one author:
+
+~~~
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+cff-version: 1.2.0
+title: My Software
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Anne
+    family-names: Researcher
+~~~
+{: .language-yaml}
+
+Additional and optional metadata includes an abstract, repository URL and more.
+
+Instead of typing out YAML manually we can also use the [`cffinit`](https://bit.ly/cffinit) tool to make a CFF file
+for us. CFF files can also be updated using the `cffinit` online tool by pasting the previous version of CFF file 
+and working through the form to update various fields.
+
+> ## Challenge: Creating CFF file and making your software citable
+> We can create (and later update) a CFF file for our software using an online application called
+> [`cffinit`](https://bit.ly/cffinit) by following these steps:
+> 
+> 1. Head to [`cffinit` online tool](https://bit.ly/cffinit).
+> 2. Then, work through the metadata input form to complete the minimum information needed to generate a CFF. 
+>   We can use the following description as an "Abstract": "A Python script to graph the locations of wave buoys around the UK". 
+>   Add the URL of the code repository as a "Related Resources".
+>   Add at least one keyword under the "Keywords" section.
+> 3. At the end of the process, download the CFF file and inspect it. It should look like this:
+> ~~~
+> # This CITATION.cff file was generated with cffinit.
+> # Visit https://bit.ly/cffinit to generate yours today!
+> cff-version: 1.2.0
+> title: Plot Buoys
+> message: >-
+>  If you use this software, please cite it using the
+>  metadata from this file.
+> type: software
+> authors:
+>  - given-names: Sauze
+>    name-particle: Colin
+>  - given-names: Turner
+>    family-names: Esther
+>  - given-names: Ferrira
+>    family-names: Tobias
+> repository-code: >-
+>  https://github.com/YOUR-REPOSITORY-URL/intermediate-git-test-repo.git
+> abstract: >-
+>  A Python script to graph the locations of wave buoys around the UK.
+> keywords:
+>  - wave buoys
+> ~~~
+> {: .language-yaml}
+{: .challenge}
+
+
+> ## Citing
+> To cite our software (or dataset), once a CFF file has been pushed to our remote repository,
+> GitHub's "Cite this repository" button can be used to generate a citation in various formats (APA, BibTeX).
+> 
+{: .callout}
+
+Further information is available from the [Turing Way's guide to software citation](https://book.the-turing-way.org/community-handbook/style/style-citing).
+
 
 ### Archiving code to Zenodo and obtaining a DOI
 
@@ -191,49 +284,43 @@ Here is the badge for this repository and the corresponding Markdown:
 > If this happens try disabling the extra privacy features/extensions or using another browser such as Chrome.
 {: .callout}
 
+#### Adding a DOI to citation file
 
-### Adding a DOI and ORCID to the citation file
-
-Now that we have our DOI it is good practice to include this information
-in our citation file. 
-Earlier we created a `CITATION.cff` file with information about how to cite our code.
 There are a few fields we can add now which are related to the DOI; one of these is the `version` file which covers 
 the version number of the software.
 We can add a DOI to the file in the `identifiers` section with a type of `doi` and `value` of the Zenodo URL.
 Optionally we can also add a `date-released` field indicating the date we released this software.
-Here is an updated version of our `CITATION.cff` from the previous episode with a version number, DOI and release date added.
+Here is an updated version of our `CITATION.cff` from the earlier with a version number, DOI and release date added.
 
-```yaml
+~~~
 # This CITATION.cff file was generated with cffinit.
 # Visit https://bit.ly/cffinit to generate yours today!
-
 cff-version: 1.2.0
-title: Spacewalks
+title: Plot Buoys
 message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
+ If you use this software, please cite it using the
+ metadata from this file.
 type: software
 authors:
-  - given-names: Jaffa
-    name-particle: Sarah
-  - given-names: Aleksandra
-    family-names: Nenadic
-  - given-names: Kamilla
-    family-names: Kopec-Harding
+  - given-names: Sauze
+    name-particle: Colin
+  - given-names: Turner
+    family-names: Esther
+  - given-names: Ferrira
+    family-names: Tobias
 repository-code: >-
-  https://github.com/YOUR-REPOSITORY-URL/spacewalks.git
+  https://github.com/YOUR-REPOSITORY-URL/intermediate-git-test-repo.git
 abstract: >-
-  A Python script to analyse NASA extravehicular activity
-  data
+  A Python script to graph the locations of wave buoys around the UK.
 keywords:
-  - NASA
-  - Extravehicular activity
+ - wave buoys
 version: 1.0.1
 identifiers:
   - type: doi
     value: 10.5281/zenodo.1234
-date-released: 2024-06-01
-```
+date-released: 2025-08-04
+~~~
+{: .language-yaml}
 
 
 >## Add a DOI to your citation file

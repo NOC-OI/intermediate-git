@@ -17,7 +17,7 @@ A fork of a repository is a new repository which shares code and history with th
 
 In order to try out the commands in this lesson we need to set up a repository on GitHub:
 
-- Go to https://github.com/NOC-OI/intermediate-git-test-repo
+- Go to [https://github.com/NOC-OI/intermediate-git-test-repo](https://github.com/NOC-OI/intermediate-git-test-repo)
 - Click on the `Fork` button on the top right and follow the instructions. Make sure the 'Copy the main branch only' option is not selected. When this is process is done, you will be directed to your copy of the repository on GitHub.
 - Click the green `Code` button. Copy the `SSH` path to the repository to your local machine. Do not download a ZIP file.
 - Create a local copy. The command will be similar to this but with your user name:

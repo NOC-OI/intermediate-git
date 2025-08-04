@@ -19,7 +19,7 @@ keypoints:
 - "`git reset --hard` roll back and delete all changes"
 - "`git reset` alters the history of the project."
 - "You should use `git reset` to undo local changes that have not been pushed to a remote repository."
-- "`git restore` can restore a file in the working directory to it's state from the repository.
+- "`git restore` can restore a file in the working directory to it's state from the repository."
 - "`git restore --staged` can remove a file from the staging area but leaves it in the working directory."
 - "`git restore` is a newer command and `git reset` can be used to do many of the same operations, but `git restore` has a simpler syntax."
 - "`git checkout <commit ID>` can be used to move the repository back to an earlier commit."

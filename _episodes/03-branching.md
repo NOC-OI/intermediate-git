@@ -116,14 +116,28 @@ git branch -m <old-branch-name> <new-branch-name>
 ~~~
 {: .language-bash}
 
->## Exercise 1: Create a feature branch
+>## Exercise 1: Create and delete a branch
+> Create a branch in your local copy of intermediate-git-test-repo, list all the branches, then delete the new branch.
+>
+> > ## Solution
+> > ~~~
+> > git branch
+> > git branch test-branch
+> > git branch
+> > git branch -d test-branch
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
+
+>## Exercise 2: Create a feature branch
 > Create a feature branch in your local copy of intermediate-git-test-repo. Make a change to the `plot_buoys.py` script, such as changing the colour of the buoy symbols on line 28.
 > Commit your change and push it to your fork on Github.
 >
 > > ## Solution
 > > ~~~
-> > git branch featue-branch
-> > git switch featue-branch
+> > git branch feature-branch
+> > git switch feature-branch
 > > ~~~
 > > {: .language-bash}
 > > Make some edit to `plot_buoys.py`.

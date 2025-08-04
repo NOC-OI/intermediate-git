@@ -14,19 +14,21 @@ keypoints:
 
 ## Episode setup
 First we need to pull down some code from a remote repository, we will need an example with some broken code
-which can be found in the `broken` branch of our example repository.
+which can be found in the `broken` branch of our example repository. Note that by default when forking 
+only the `main` branch is copied into the forked repository. So unless you ticked the option for including
+all the branches when you forked the repository you won't have the `broken` branch in your fork. 
 ~~~
 $ cd ~/Desktop
 ~~~
 {: .language-bash}
-and clone the code
+and clone the code into a directory called intermediate-git-test-repo-upstream
 ~~~
-$ git clone git@github.com:NOC-OI/intermediate-git-test-repo.git
+$ git clone git@github.com:NOC-OI/intermediate-git-test-repo.git intermediate-git-test-repo-upstream
 ~~~
 {: .language-bash}
 and change into the fresh repository and switch to the `broken` branch.
 ~~~
-$ cd intermediate-git-test-repo
+$ cd intermediate-git-test-repo-upstream
 $ git switch broken
 ~~~
 {: .language-bash}

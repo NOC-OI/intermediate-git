@@ -133,7 +133,7 @@ git branch -m <old-branch-name> <new-branch-name>
 > > git switch feature-branch
 > > ~~~
 > > {: .language-bash}
-> > Make some edit to `plot_buoys.py`.
+> > Make some edits to `plot_buoys.py`, try changing the marker colour from red to blue. This is done on the line beginning `buoys_geo.plot`. 
 > > ~~~
 > > git add plot_buoys.py
 > > git commit -m "Change colour of buoy marker"

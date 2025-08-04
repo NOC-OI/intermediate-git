@@ -1,7 +1,7 @@
 ---
 title: "Forks"
-teaching: 0
-exercises: 0
+teaching: 5
+exercises: 5
 questions:
 - "What are forks?"
 objectives:

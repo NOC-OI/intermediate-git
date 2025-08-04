@@ -1,7 +1,7 @@
 ---
 title: "Remote Repositories"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 20
 questions:
 - "How can I work in remote teams and with remotely hosted code?"
 objectives:
@@ -139,7 +139,7 @@ Now we can set the NOC-OI version of our repository as the upstream for our loca
 >
 > > ## Solution
 > > ~~~
-> > git remote add upstream git@github.com:NOC-OI/intermediate-git-test-repo.git
+> > git remote add upstream https://github.com/NOC-OI/intermediate-git-test-repo.git
 > > git fetch upstream
 > > git branch -vv -a
 > > git branch develop upstream/develop

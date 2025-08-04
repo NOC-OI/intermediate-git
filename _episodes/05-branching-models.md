@@ -1,7 +1,7 @@
 ---
 title: "Branching Models"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 10
 questions:
 - "What is a branching model?"
 - "Why do you need one?"

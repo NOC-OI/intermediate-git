@@ -1,6 +1,6 @@
 ---
 title: "Publishing and Citing Code"
-teaching: 0
+teaching: 20
 exercises: 20
 questions:
 - "How do I ensure my code is citable?"

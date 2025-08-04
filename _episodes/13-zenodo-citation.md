@@ -10,16 +10,75 @@ keypoints:
 
 ---
 
-Sharing code openly promotes collaboration, transparency, and innovation by allowing others to review, use, and 
-improve the code. 
-It fosters knowledge exchange, accelerates scientific progress, and enhances the reproducibility of research. 
-Additionally, open sharing encourages community contributions and can lead to better-maintained, 
-more reliable software.
+## Adding an Open Source License to your code
 
-Adding a license and other metadata to our code (covered in the previous episode) are the first steps towards 
-sharing the code publicly.
-There are several other important steps to consider which we will cover here.
+Copyright allows a creator of work (such as written text, photographs, films, music, software code) to state that 
+they own the work they have created. Copyright is automatically implied - even if the creator does not explicitly 
+assert it, copyright of the work exists from the moment of creation. A licence is a legal document which sets down 
+the terms under which the creator is releasing what they have created for others to use, modify, extend or exploit.
 
+Because any creative work is copyrighted the moment it is created, even without any kind of licence agreement, 
+it is important to state the terms under which software can be reused. 
+The lack of a licence for your software implies that no one can reuse the software at all - hence it is imperative 
+you declare it. A common way to declare your copyright of a piece of software and the license you are 
+distributing it under is to include a file called LICENSE in the root directory of your code repository.
+
+### Copyleft and Permissive Licenses
+
+Open Source licenses are a form of Copyright license that exist to keep the source code of software freely available,
+redistributable, modifiable and reusable. There are broadly two classes on open source licenses:
+* Copyleft Licenses - These require that any subsequent changes to the program are also released under a similar license. 
+This can help to ensure that any subsequent improvements to the code are made available to the wider community. But 
+sometimes this can worry commercial users who would have to release the source of their entire program if they combined your
+code with theirs. 
+
+* Permissive Licenses - These do not require that subsequent changes to the program are released under a similar license, 
+but usually require a Copyright statement saying that code has been reused from the original source code. This means
+the code can be incorporated into commercial software without that software itself needing to be released under an 
+open source license. This can help encourage uptake across a wider community of users but might mean that derivative
+works are created without contributing back the source code of their improvements to the community. 
+
+Common examples of Copyleft licenses include the GNU Public License also known as the GPL. Common copylet licenses
+include the MIT and Apache 2 licenses. 
+
+### Choosing a License
+
+If you would like help choosing a license then [choosealicense.com](https://choosealicense.com/) will
+help you find a common license that suits your needs.  Important
+considerations include:
+
+* Whether you want to address patent rights.
+* Whether you require people distributing derivative works to also
+  distribute their source code.
+* Whether the content you are licensing is source code.
+* Whether you want to license the code at all.
+
+Choosing a license that is in common use makes life easier for
+contributors and users, because they are more likely to already be
+familiar with the license and don't have to wade through a bunch of
+jargon to decide if they're ok with it.  The [Open Source
+Initiative](https://opensource.org/licenses) and [Free Software
+Foundation](https://www.gnu.org/licenses/license-list.html) both
+maintain lists of licenses which are good choices.
+
+[This article](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002598) provides an excellent overview of
+licensing and licensing options from the perspective of scientists who also write code.
+
+### Adding a LICENSE file
+
+Typically we let users know what license a program is distributed under by adding a LICENSE file to the Git repository.
+This file will contain the text of the chosen license. In case the source files are distributed individually it can also be
+helpful to add a comment to every source file stating who owns the Copyright, which license it is distributed under and where
+to find the full text (e.g. the repository's LICENSE file or a URL to the license text) of the license. 
+
+If you create an empty Github repository using Github's web interface then Github will offer you a choice of licenses as part of the 
+repository creation process.
+
+> ## Challenge: Add a license file to your repository
+> Use [choosealicense.com](https://choosealicense.com/) to pick an open source license you are happy with. 
+> Create a file called LICENSE in your repository and add the text of your chosen license to this.
+> Add a comment to the top of `plot_bouys.py` stating which license you have chosen and where to find the text of it.
+{: .challenge}
 
 ## Sharing code to encourage collaboration
 

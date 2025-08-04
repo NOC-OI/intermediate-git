@@ -1,7 +1,7 @@
 ---
-title: "Odd things to know about Files"
-teaching: 0
-exercises: 0
+title: "Using Large Files in Git"
+teaching: 10
+exercises: 5
 questions:
 - "Why are (large) binary files a problem in Git?"
 - "What is Git LFS?"
@@ -17,10 +17,11 @@ keypoints:
 ---
 
 Sometimes, you might want to add non-textual data to your Git repositories.
-Examples for such uses cases in a software project are e.g.
+Examples for such uses cases in a software project are:
 
 * assets for the project documentation like images
 * test data for your test suite
+* example datasets
 
 However, such data is stored in binary formats most of the time. Git's line-based
 approach of tracking changes is not suited for this type of data. While Git will
@@ -152,8 +153,32 @@ Uploading LFS objects: 100% (1/1), 17 B | 0 B/s, done.
 >   Trying to work with those files will typically produce cryptic error messages.
 > * Some hosting providers - most notably GitHub - apply restrictive quotas to LFS storage.
 >   On the free plan, GitHub currently allows 1GB of storage and 1 GB bandwidth per month.
->   As the band width quota counts every single clone by users, **LFS should currently
+>   As the bandwidth quota counts every single clone by users, **LFS should currently
 >   be considered unusable on the GitHub free plan.**
 {: .caution}
+
+> ## Challenge: Add your images into Git LFS
+> When the `plot_buoys.py` script is run it produces a PNG file (`plot_buoys.png`).
+> 
+> Try and do the following:
+> 1. Add all PNG files to Git LFS. 
+> 2. Commit the updated .gitattributes file.
+> 3. Add, commit and push `plot_buoys.png` to your Github repository.
+> 4. Find the file in Github's web interface. Can you confirm if it has used LFS?
+> 
+>> ## Solution
+>> ~~~
+>> git lfs track "*.png"
+>> git commit .gitattributes -m "using Git LFS for PNG files"
+>> git add plot_buoys.png
+>> git commit -m "adding example output image"
+>> git push
+>> ~~~
+>> {: .language-bash}
+>>
+>> When viewing the image on Github's website it should say "Stored with Git LFS"
+> {: .solution}
+{: .challenge}
+
 
 {% include links.md %}

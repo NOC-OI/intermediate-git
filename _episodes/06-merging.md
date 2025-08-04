@@ -13,9 +13,9 @@ keypoints:
 
 ## Merging a PR
 
-Let's use one of the PRs from the last exercise as an example. We can merge this PR via Github by clicking on the 'Merge pull request' button. You'll notice that Github automatically checks whether there are any conflicts and has told us that there are not. 
+Let's use one of the PRs from the last exercise as an example. We can merge this PR via Github by clicking on the 'Merge pull request' button. You'll notice that Github automatically checks whether there are any conflicts and has told us that there are not.
 
-Now, let's purposefully set up a conflict, to see what that looks like when dealing with a PR on Github. To do this, I'm going to change the colour of the buoy marker in `main` directly (which we've just told you is bad practice!). 
+Now, let's purposefully set up a conflict, to see what that looks like when dealing with a PR on Github. To do this, I'm going to change the colour of the buoy marker in `main` directly (which we've just told you is bad practice!).
 
 Now our PR says that there are conflicts that must be resolved. It's possible to do this in the web browser and we'll look at this example there, as it's small. But in larger and more complicated cases, you might want to deal with it via the command line.
 
@@ -30,21 +30,21 @@ Via the web browser, we are being shown something that looks like:
 ~~~
 {: .language-python}
 
-Here, either side of the `=======`, we have the line of code that is in conflict and we are told that the line above is coming from `feature-branch` whereas the line below is coming from `main`. We can simply delete one of these lines, and all of the extra symbols that have been added in. We can then click 'Mark as resolved' and then we need to commit the merge. 
+Here, either side of the `=======`, we have the line of code that is in conflict and we are told that the line above is coming from `feature-branch` whereas the line below is coming from `main`. We can simply delete one of these lines, and all of the extra symbols that have been added in. We can then click 'Mark as resolved' and then we need to commit the merge.
 
-Now, in our PR, we have an extra commit called 'Merge branch main into feature-branch' and we no longer have any conflicts. 
+Now, in our PR, we have an extra commit called 'Merge branch main into feature-branch' and we no longer have any conflicts.
 
 ### Squashing
 
-One other thing to briefly cover while we are talking about PRs is squashing. Squashing allows you to combine multiple commits into just one commit. This makes the history of your repository much simpler and easier to follow, but you are also losing information by doing this and make it harder to track down bugs (among other pros and cons!). Some teams will have development workflows that involve squashing and others won't, as we discussed last lesson, it's important to talk to your collaborators about it. 
+One other thing to briefly cover while we are talking about PRs is squashing. Squashing allows you to combine multiple commits into just one commit. This makes the history of your repository much simpler and easier to follow, but you are also losing information by doing this and make it harder to track down bugs (among other pros and cons!). Some teams will have development workflows that involve squashing and others won't, as we discussed last lesson, it's important to talk to your collaborators about it.
 
-We aren't going to cover squashing in much detail here, other than how you can squash all of the commits in a branch at the point of merging the branch into `main` as a PR. 
+We aren't going to cover squashing in much detail here, other than how you can squash all of the commits in a branch at the point of merging the branch into `main` as a PR.
 
-There is a branch of the upstream repo called `multiple-commits`. If we make a PR for that branch into main, we see that the 'Merge pull request' button has a little drop down arrow and one option is 'Squah and merge'. If we select this, then all three of the commits on this branch are squashed when we merge. 
+There is a branch of the upstream repo called `multiple-commits`. If we make a PR for that branch into main, we see that the 'Merge pull request' button has a little drop down arrow and one option is 'Squah and merge'. If we select this, then all three of the commits on this branch are squashed when we merge.
 
 ## git merge
 
-So far we've talked about merging via the web broswer as part of a PR, but there will be other times you want to merge and it's very useful to be able to do this from the command line as well. 
+So far we've talked about merging via the web broswer as part of a PR, but there will be other times you want to merge and it's very useful to be able to do this from the command line as well.
 
 When you are collaborating, you will have to merge a branch independent if your branch may or may not have diverged from the main branch. Most of the Git hosting platform like GiHub or GitLab allows you to merge a branch from their web interface but you can also merge the branches from your machine using `git merge`.
 
@@ -95,7 +95,7 @@ The `--no-ff` flag causes the merge to always create a new commit object, even i
 > > touch README.md
 > > git add README.md
 > > git commit -m 'Add README'
-> > git checkout -b gitignore # you can also use `git switch -c gitignore`
+> > git checkout -b gitignore # you can also use "git switch -c gitignore"
 > > touch .gitignore
 > > git add .gitignore
 > > git commit -m "Add .gitignore"

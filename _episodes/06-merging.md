@@ -93,21 +93,13 @@ The `--no-ff` flag causes the merge to always create a new commit object, even i
 >
 > In another directory, create a new Git repository that has the following tree.
 >
-> ~~~
-> *   69fac81 (main) Merge branch 'gitignore'
-> |\
-> | * 5537012 (gitignore) Add .gitignore
-> |/
-> * 6ec7c0f Add README
-> ~~~
->
 > > ## Solution
 > > ~~~
 > > git init
 > > touch README.md
 > > git add README.md
 > > git commit -m 'Add README'
-> > git checkout -b gitignore # you can also use "git switch -c gitignore"
+> > git switch -c gitignore
 > > touch .gitignore
 > > git add .gitignore
 > > git commit -m "Add .gitignore"
@@ -195,7 +187,7 @@ Honestly, everyone probably ends up with their own way of resolving conflicts th
 
 >## Exercise: Conflict resolution.
 >
-> Create a new branch and rename the `plot_buoy_data` function (in both locations!). Add a comment to the where the function is called from, as well. Commit these changes. Then, merge in the branch upstream/rename and resolve any conflicts. 
+> Create a new branch and rename the `plot_buoy_data` function (in both locations!). Add a comment to the where the function is called from, as well. Commit these changes. Then, merge in the branch `upstream/rename` and resolve any conflicts. 
 >
 > ~~~
 > *   69fac81 (main) Merge branch 'gitignore'

@@ -48,19 +48,19 @@ The `--no-ff` flag causes the merge to always create a new commit object, even i
 >
 > ~~~
 > *   69fac81 (main) Merge branch 'gitignore'
-> |\  
+> |\
 > | * 5537012 (gitignore) Add .gitignore
-> |/  
+> |/
 > * 6ec7c0f Add README
 > ~~~
-> 
+>
 > > ## Solution
 > > ~~~
 > > git init
 > > touch README.md
 > > git add README.md
 > > git commit -m 'Add README'
-> > git checkout -b gitignore
+> > git checkout -b gitignore # you can also use `git switch -c gitignore`
 > > touch .gitignore
 > > git add .gitignore
 > > git commit -m "Add .gitignore"
@@ -93,13 +93,13 @@ For a good illustration of fast-forward merge (and other concepts), see this [th
 > ~~~
 > * a78b99f (main) Add title
 > | * 3d88062 (remote) Add .gitignore
-> |/  
+> |/
 > * 86c4247 Add README
 > ~~~
-> 
+>
 > Is possible to run a fast-forward merge to incorporate the branch `remote` into `main`?
 > > ## Solution
-> > It is not possible to run a fast-forward merge because of commit `a78b99f`. 
+> > It is not possible to run a fast-forward merge because of commit `a78b99f`.
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
@@ -117,7 +117,7 @@ git merge <branch> [-s <strategy>]
 See [here](https://git-scm.com/docs/merge-strategies) for a zillion options (“patience”, “octopus”, etc),  But also git is only so smart and you are probably smarter.
 
 
-See [here](https://git-scm.com/docs/merge-strategies) and [here](https://nvie.com/posts/a-successful-git-branching-model/) for some discussion of merging strategies. 
+See [here](https://git-scm.com/docs/merge-strategies) and [here](https://nvie.com/posts/a-successful-git-branching-model/) for some discussion of merging strategies.
 
 [comment]: <> (![Merging 1](../fig/09-merging-1.png))
 [comment]: <> (![Merging 2](../fig/10-merging-2.png)

@@ -13,8 +13,8 @@ keypoints:
 ---
 
 ## Episode setup
-First we need to pull down some code from a remote repository, we will need an example with some broken code 
-which can be found in the `broken` branch of our example repository. 
+First we need to pull down some code from a remote repository, we will need an example with some broken code
+which can be found in the `broken` branch of our example repository.
 ~~~
 $ cd ~/Desktop
 ~~~
@@ -31,6 +31,9 @@ $ git switch broken
 ~~~
 {: .language-bash}
 
+> ## Installing packages
+> This code requires the `matplotlib`, `pandas` and `geopandas` packages to run. If you don't have this installed, you can install it with `pip install matplotlib pandas geopandas`.
+{: .callout}
 
 ## Tracking down a broken commit
 
@@ -44,6 +47,7 @@ We see a small number of files; let's have a look inside `plot_bouys.py`.
 $ nano plot_buoys.py
 ~~~
 {: .language-bash}
+
 Let's try to run the code
 ~~~
 $ python plot_bouys.py
@@ -58,7 +62,7 @@ If we looked at this for a while, can could probably spot the commit that might 
 In reality however, finding the problem wouldn't be this simple. In general, we might not know what file the problem is in, or where in that file.
 We may have hundreds of files with hundreds of lines each, and no idea where to start looking. Let's start by looking at the initial commit.
 ~~~
-$ git checkout 2890
+$ git checkout 2890 # This is the number of the commit we want to look at
 ~~~
 {: .language-bash}
 And see if the `plot_buoys.py` script runs here.
@@ -92,7 +96,7 @@ That's better. Let's take a closer look at the commit on line 61.
 $ git show 4445
 ~~~
 {: .language-bash}
-That's interesting. We have found a change to that line, but not the one which 
+That's interesting. We have found a change to that line, but not the one which
 altered the function name. Let's try going back a bit in the history with `git checkout` and do this again.
 
 ~~~
@@ -115,7 +119,7 @@ Multiple commits after something breaks can make `git blame` a little harder to 
 > We can ask `git blame` to attempt to track changes across files. For example where
 > code is copied and pasted from one file to another or where files are renamed using `git mv`.
 > We can do this by specifying the `-C` option to `git blame`.
-> Use `git blame -C` to identify which lines of `plot_buoys.py` came from another file. Then 
+> Use `git blame -C` to identify which lines of `plot_buoys.py` came from another file. Then
 > use `git show` or `git checkout` to examine the contents of this file.
 >
 >> ## Solution
@@ -192,7 +196,7 @@ Great, git has moved us again. Let's check where we are this time, it should be 
 $ git log --oneline broken
 ~~~
 {: .language-bash}
-The markers for good and bad have moved, because we've given bisect more information, and `HEAD` has been placed between them. 
+The markers for good and bad have moved, because we've given bisect more information, and `HEAD` has been placed between them.
 ~~~
 $ python plot_buoys.py
 ~~~
@@ -297,5 +301,3 @@ $ git bisect reset
 {: .callout}
 
 {% include links.md %}
-
-

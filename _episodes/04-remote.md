@@ -12,9 +12,7 @@ keypoints:
 - "Other git commands (`git fetch`, `git push`, `git pull`) use these bookmarks to carry out their syncing responsibilities."
 ---
 
-https://www.atlassian.com/git/tutorials/syncing
-
-Git's distributed collaboration model, which gives every developer their own copy of the repository, complete with its own local history and branch structure. Users typically need to share a series of commits rather than a single "changeset". Instead of committing a "changeset" from a working copy to the central repository, Git lets you share entire branches between repositories.
+Git's distributed collaboration model, which gives every developer their own copy of the repository, complete with its own local history and branch structure. Users typically need to share a series of commits rather than a single "changeset". Instead of committing a "changeset" from a working copy to the central repository, Git lets you share entire branches between repositories ([REFERENCE](https://www.atlassian.com/git/tutorials/syncing)).
 
 ## Git remote
 
@@ -93,7 +91,7 @@ git show <name>
 ~~~
 {: .language-bash}
 
->## Exercise 1: Add a connection to your neighbour's repository. 
+>## Exercise 1: Add a connection to your neighbour's repository.
 > Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.
 >
 > > ## Solution
@@ -129,7 +127,7 @@ git switch <branch>
 
 Now we can set the NOC-OI version of our repository as the upstream for our local copy.
 
->## Exercise 2: Setting upstream and checking out remote branches. 
+>## Exercise 2: Setting upstream and checking out remote branches.
 > Set the https://github.com/NOC-OI/intermediate-git-test-repo  repo as the upstream locally.
 > Then check which branches exist upstream and create a local branch with the starting point of the upstream branch called `develop`.
 >
@@ -158,13 +156,13 @@ $ git pull -v
 
 This branch has a small commit which is not in your `origin` remote.
 
->## Exercise 3: Pushing to origin. 
+>## Exercise 3: Pushing to origin.
 > Push these changes we've pulled down to own remote
 repository (`origin`).
 >
 > > ## Solution
 > > ~~~
-> > $ git push origin develop 
+> > $ git push origin develop
 > > ~~~
 > >{: .language-bash}
 > {: .solution}

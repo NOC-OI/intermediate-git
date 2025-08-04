@@ -96,12 +96,15 @@ git show <name>
 ~~~
 {: .language-bash}
 
->## Exercise 1: Add a connection to your neighbour's repository. 
+>## Exercise 1: Add and delete a connection to your neighbour's repository. 
 > Having this kind of access to individual developers’ repositories makes it possible to collaborate outside of the central repository. This can be very useful for small teams working on a large project.
 >
 > > ## Solution
 > > ~~~
 > > git remote add john http://dev.example.com/john.git
+> > git remote -v
+> > git remote rm john
+> > git remote -v
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
@@ -175,7 +178,7 @@ We can also examine our upstream branches some arguments to the `git branch` com
 > {: .solution}
 {: .challenge}
 
-If we wanted to switch the default remote for this branch, we could use ` git branch --set-upstream-to <remote/branch>` (or `--u`).
+If we wanted to switch the default remote for this branch, we could use `git branch --set-upstream-to <remote/branch>` (or `--u`).
 
 The develop branch we checked out from the upstream remote branch a small commit which is not in your `origin` remote.
 

@@ -11,6 +11,35 @@ keypoints:
 - "`git merge --ff-only` is a good way to pull down changes from remote"
 ---
 
+## Merging a PR
+
+Let's use one of the PRs from the last exercise as an example. We can merge this PR via Github by clicking on the 'Merge pull request' button. You'll notice that Github automatically checks whether there are any conflicts and has told us that there are not. 
+
+Now, let's purposefully set up a conflict, to see what that looks like when dealing with a PR on Github. To do this, I'm going to change the colour of the buoy marker in `main` directly (which we've just told you is bad practice!). 
+
+Now our PR says that there are conflicts that must be resolved. It's possible to do this in the web browser and we'll look at this example there, as it's small. But in larger and more complicated cases, you might want to deal with it via the command line.
+
+Via the web browser, we are being shown something that looks like:
+
+~~~
+ <<<<<<< feature-branch
+    buoys_geo.plot(ax=ax, color="blue")
+=======
+    buoys_geo.plot(ax=ax, color="green")
+ >>>>>>> main
+~~~
+{: .language-python}
+
+Here, either side of the `=======`, we have the line of code that is in conflict and we are told that the line above is coming from `feature-branch` whereas the line below is coming from `main`. We can simply delete one of these lines, and all of the extra symbols that have been added in. We can then click 'Mark as resolved' and then we need to commit the merge. 
+
+Now, in our PR, we have an extra commit called 'Merge branch main into feature-branch' and we no longer have any conflicts. 
+
+### Squashing
+
+One other thing to briefly cover while we are talking about PRs is squashing. 
+
+## git merge
+
 When you are collaborating, you will have to merge a branch independent if your branch may or may not have diverged from the main branch. Most of the Git hosting platform like GiHub or GitLab allows you to merge a branch from their web interface but you can also merge the branches from your machine using `git merge`.
 
 There are 2 ways to merge:
@@ -127,9 +156,5 @@ See [here](https://git-scm.com/docs/merge-strategies) and [here](https://nvie.co
 
 
 Note: there are a number of external tools that have a graphical interface to allow for merge conflict resolution. Some of these include: kdiff3 (Windows, Mac, Linux), Meld (Windows, Linux), P4Merge (Windows, Mac, Linux),  opendiff (Mac), vimdiff (for Vim users), Beyond Compare, GitHub web interface. We do not endorse any of them and use at your own risk. In any case, using a graphical interface does not substitute for understanding what is happening under the hood.
-
-## Resolving Conflicts
-
-## Squashing
 
 {% include links.md %}

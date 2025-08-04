@@ -1,6 +1,6 @@
 ---
 title: "Advanced Logging"
-teaching: 0
+teaching: 15
 exercises: 0
 questions:
 - "How can I find the commits I'm looking for?"
@@ -28,11 +28,6 @@ are included in the output. Together, these two skills give us the
 power to go back into your project and find any information that you
 could possibly need.
 
-Let's grab a repository from the web to start working with
-~~~
-$ git clone git@github.com:sa2c/example-gitflow-modified.git ~/example-gitflow-modified
-~~~
-{: .language-bash}
 
 ## Formatting Log Output
 
@@ -56,10 +51,11 @@ $ git log --oneline
 {: .language-bash}
 We'll get output which will look something like this:
 ~~~
-0e25143 Merge branch 'feature'
-ad8621a Fix a bug in the feature
-16b36c6 Add a new feature
-23ad9ad Add the initial code base
+116cdda Merge pull request #1 from NOC-OI/create_initial_script
+7a760ff Add some basic instructions to the README and credit to the Intermediate Python Course
+6c388d0 Tidy up formatting
+a62d779 Write first draft of script to plot buoy locations around UK
+6d4fb54 Initial commit
 ~~~
 {: .output}
 This is very useful for getting a high-level overview of your project.
@@ -124,18 +120,18 @@ $ git log --graph --oneline --decorate
 {: .language-bash}
 For a simple repository with just 2 branches, this will produce the following:
 ~~~
-* 0e25143 (HEAD, master) Merge branch 'feature'
-|\
-| * 16b36c6 Fix a bug in the new feature
-| * 23ad9ad Start a new feature
-* | ad8621a Fix a critical security issue
-|/
-* 400e4b7 Fix typos in the documentation
-* 160e224 Add the initial code base
+*   116cdda (HEAD -> main, origin/main, origin/HEAD) Merge pull request #1 from NOC-OI/create_initial_script
+|\  
+| * 7a760ff Add some basic instructions to the README and credit to the Intermediate Python Course
+| * 6c388d0 Tidy up formatting
+| * a62d779 Write first draft of script to plot buoy locations around UK
+|/  
+* 6d4fb54 Initial commit
+
 ~~~
 {: .output}
 The asterisk shows which branch the commit was on, so the above graph
-tells us that the `23ad9ad` and `16b36c6` commits are on a topic
+tells us that the `7a760ff`, `6c388d0` and `a62d779` commits are on a topic
 branch and the rest are on the master branch.
 
 While this is a nice option for simple repositories, you’re probably better off with a more full-featured visualization tool like gitk or Sourcetree for projects that are heavily branched.
@@ -169,10 +165,10 @@ $ git log -3
 If you’re looking for a commit from a specific time frame, you can use
 the `--after` or `--before` flags for filtering commits by date. These
 both accept a variety of date formats as a parameter. For example, the
-following command only shows commits that were created after July 1st,
-2014 (inclusive):
+following command only shows commits that were created after July 29th,
+2025 (inclusive):
 ~~~
-$ git log --after="2014-7-1"
+$ git log --after="2025-07-29"
 ~~~
 {: .language-bash}
 You can also pass in relative references like "1 week ago" and "yesterday":
@@ -182,11 +178,11 @@ $ git log --after="yesterday"
 {: .language-bash}
 To search for a commits that were created between two dates, you can
 provide both a `--before` and `--after` date. For instance, to display
-all the commits added between July 1st, 2014 and July 4th, 2014, you
+all the commits added between July 1st, 2025 and July 29th, 2025, you
 would use the following:
 
 ~~~
-$ git log --after="2014-7-1" --before="2014-7-4"
+$ git log --after="2025-7-1" --before="2025-7-29"
 ~~~
 {: .language-bash}
 
@@ -270,19 +266,19 @@ $ git log <since>..<until>
 This command is particularly useful when you use branch references as the parameters. It’s a simple way to show the differences between 2 branches. Consider the following command:
 
 ~~~
-$ git log master..feature
+$ git log main..feature
 ~~~
 {: .language-bash}
 
-The `master..feature` range contains all of the commits that are in
-the feature branch, but aren’t in the master branch. In other words,
+The `main..feature` range contains all of the commits that are in
+the feature branch, but aren’t in the main branch. In other words,
 this is how far feature has progressed since it forked off of
-master.
+main.
 
 ## Detecting a fork in the history using ranges
 
-Note that if you switch the order of the range (`feature..master`),
-you will get all of the commits in master, but not in feature. If git
+Note that if you switch the order of the range (`feature..main`),
+you will get all of the commits in main, but not in feature. If git
 log outputs commits for both versions, this tells you that your
 history has diverged.
 

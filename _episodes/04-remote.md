@@ -67,15 +67,12 @@ As expected these point to the repository you cloned.
 The `git remote` command also lets you manage connections with other repositories. The following commands will modify the repo's `./.git/config` file. The result of the following commands can also be achieved by directly editing the `./.git/config` file with a text editor.
 
 Create a new connection to a remote repository. After adding a remote, you’ll be able to use `＜name＞` as a convenient shortcut for `＜url＞` in other Git commands.
-
 ~~~
 git remote add <name> <url>
 ~~~
 {: .language-bash}
 
-
 Remove the connection:
-
 ~~~
 git remote rm <name>
 ~~~
@@ -84,6 +81,12 @@ git remote rm <name>
 Rename a connection:
 ~~~
 git remote rename <old-name> <new-name>
+~~~
+{: .language-bash}
+
+To change the url for a remote:
+~~~
+git remote set-url <new-url>
 ~~~
 {: .language-bash}
 
@@ -144,21 +147,39 @@ Now we can set the NOC-OI version of our repository as the upstream for our loca
 > > {: .language-bash}
 > {: .solution}
 >
-> Now examine the state of your repository with `git branch`, `git branch -vva` (to see all the branches), `git remote -v` and `git remote show upstream`.
+> Now examine the state of your repository with `git branch`, `git remote -v` and `git remote show upstream`.
 {: .challenge}
+
+## Tracking / Upstream Branches
 
 We can see that we are now on a local branch `develop`, which is
 configured to track the `develop` branch in `upstream`. Running `git
-push` and `git pull` in this branch will automatically push to the
-upstream branch. We can verify this with
+push` and `git pull` in this branch will automatically push to this remote branch. We can verify this with
 ~~~
 $ git pull -v
 ~~~
 {: .language-bash}
 
-This branch has a small commit which is not in your `origin` remote.
+Things get a little bit confusing here because one of our remotes, by convention, is called `upstream`. However, we will now start talking about upstream branches. What we mean by that is (typially) a remote branch which a local branch is tracking.
 
->## Exercise 3: Pushing to origin. 
+We can also examine our upstream branches some arguments to the `git branch` command. `-a` will show you local and remote branches and `-vv` will show the relationship to upstream branches.
+
+>## Exercise 3: Upstream branches. 
+> Try using the above arguments to `git branch`.
+>
+> > ## Solution
+> > ~~~
+> > $ git branch -vva 
+> > ~~~
+> >{: .language-bash}
+> {: .solution}
+{: .challenge}
+
+If we wanted to switch the default remote for this branch, we could use ` git branch --set-upstream-to <remote/branch>` (or `--u`).
+
+The develop branch we checked out from the upstream remote branch a small commit which is not in your `origin` remote.
+
+>## Exercise 4: Pushing to origin. 
 > Push these changes we've pulled down to own remote
 repository (`origin`).
 >
@@ -167,7 +188,18 @@ repository (`origin`).
 > > $ git push origin develop 
 > > ~~~
 > >{: .language-bash}
+> > Regardless of what is set as the upstream branch, you can always be explicit about the remote and branch name. There are many ways you could format this command, see the [git push documentation](https://git-scm.com/docs/git-push) for options.
 > {: .solution}
+{: .challenge}
+
+## Having Github and Gitlab Remotes
+
+You might want to have remote copies of your repository on both Github and Gitlab. For example, you might have developed code on NOC's Gitlab, in a private repository, but now you want a copy on Github, which will be open to the public. 
+
+We will actually demo this in reverse, seeing as our test repo is already set up on Github. Therefore, let's create a blank project in Gitlab, add a new remote to our local repo and push the main branch to Gitlab. 
+
+>## Exercise 4: Set up a Gitlab remote. 
+> Try to set up a remote in Gitlab, as discussed in the paragraph above.
 {: .challenge}
 
 We can configure as many remotes as we like. If you work closely with friends or colleagues, it could be common for you to want to pull interesting changes from their remotes, incorporate those into your current branches, and push those changes to your remote.

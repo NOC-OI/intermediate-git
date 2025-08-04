@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-teaching: 10
+teaching: 20
 exercises: 0
 questions:
 - "What do I do when I need to make complex decisions with my git respository?"

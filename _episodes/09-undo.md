@@ -367,7 +367,7 @@ the working directory, staging area and repository.
 > 2. You committed a file that you thought fixed a bug but realised soon after that you made a small mistake. You would like to fix the mistake but have the fix as a single commit.
 > 3. You have committed a file which was accidentally placed in your Git working directory and should have never been there.
 >> ## Solution
->> 1. soft, we are assuming we do git reset HEAD~3`, all three files are now placed in the staging area and a single new commit will commit all three together.
+>> 1. soft, we are assuming we do `git reset HEAD~3`, all three files are now placed in the staging area and a single new commit will commit all three together.
 >> 2. mixed, as we need to make some changes after resetting the commit we don't want the file added to the staging area. Although we could do a soft reset followed by another `git add`.
 >> 3. hard, since we don't want to keep the file after the reset.
 > {: .solution}

@@ -40,13 +40,13 @@ Before we can proceed we need to create a branch with some commits that we will 
 > > #or git checkout -b hotfix
 > > touch a.txt
 > > git add a.txt
-> > git commit -m "1st git commit: 1 file"
+> > git commit -m "creating a.txt"
 > > touch b.txt
 > > git add b.txt 
-> > git commit -m "2nd git commit: 2 file"
+> > git commit -m "creating b.txt"
 > > touch c.txt
 > > git add c.txt
-> >  git commit -m "3rd git commit: 3 file"
+> >  git commit -m "creating c.txt"
 > > git status
 > > git log --oneline 
 > > ~~~
@@ -54,7 +54,32 @@ Before we can proceed we need to create a branch with some commits that we will 
 > {: .solution}
 {: .challenge}
 
-## Amending a Git Commit message
+## Amending the last Git Commit 
+
+### Amending the commit message
+
+Sometimes we make a mistake with the message in a commit we just wrote. This can be fixed by adding the `--amend` option to `git commit -m`. 
+
+~~~
+git commit --amend -m "new commit message"
+~~~
+{: .language-bash}
+
+Note that this only works on the last commit, if you need to change something more than one commit ago then things get more complicated. 
+
+We (ideally) need to do this correction before pushing the commit to a remote. If we have a pushed first we will receive an error:
+
+~~~
+git push origin hotfix 
+git commit --ammend -m "creating c.txt"
+git push origin hotfix
+~~~
+{: .language-bash}
+
+We can override this by "forcing" the push, but this has complications because running `git commit --amend` changes the hash of the last commit. 
+If somebody else has cloned the repository then they are going to have to deal with the missing commit when they next pull. For this reason 
+it is best to avoid amending commits once you have pushed them as this is effectively rewriting the history. 
+
 
 ## Git Revert
 

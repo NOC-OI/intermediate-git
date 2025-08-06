@@ -92,6 +92,13 @@ The `--no-ff` flag causes the merge to always create a new commit object, even i
 >## Exercise: Creating a non-fast-forward merge.
 >
 > In another directory, create a new Git repository that has the following tree.
+> ~~~
+> *   69fac81 (main) Merge branch 'gitignore'
+> |\
+> | * 5537012 (gitignore) Add .gitignore
+> |/
+> * 6ec7c0f Add README
+> ~~~
 >
 > > ## Solution
 > > ~~~
@@ -188,14 +195,6 @@ Honestly, everyone probably ends up with their own way of resolving conflicts th
 >## Exercise: Conflict resolution.
 >
 > Create a new branch and rename the `plot_buoy_data` function (in both locations!). Add a comment to the where the function is called from, as well. Commit these changes. Then, merge in the branch `upstream/rename` and resolve any conflicts. 
->
-> ~~~
-> *   69fac81 (main) Merge branch 'gitignore'
-> |\
-> | * 5537012 (gitignore) Add .gitignore
-> |/
-> * 6ec7c0f Add README
-> ~~~
 >
 > > ## Solution
 > > ~~~
